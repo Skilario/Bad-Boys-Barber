@@ -72,10 +72,10 @@ if (sections.length && navLinks.length) {
   }, { passive: true });
 }
 
-/* ---- Gallery lightbox (simple) ---- */
-const galleryItems = document.querySelectorAll('.gallery-item');
+/* ---- galeria lightbox (simple) ---- */
+const galeriaItems = document.querySelectorAll('.galeria-item');
 
-if (galleryItems.length) {
+if (galeriaItems.length) {
   // Create lightbox
   const lb = document.createElement('div');
   lb.id = 'lightbox';
@@ -120,7 +120,7 @@ if (galleryItems.length) {
     document.body.style.overflow = '';
   };
 
-  galleryItems.forEach(item => {
+  galeriaItems.forEach(item => {
     item.addEventListener('click', () => {
       const img = item.querySelector('img');
       if (img) openLb(img.src);
@@ -226,7 +226,7 @@ if (contactForm) {
 }
 
 /* ---- Neon hover glow on cards ---- */
-document.querySelectorAll('.product-card, .sucursal-card').forEach(card => {
+document.querySelectorAll('.producto-card, .sucursal-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width)  * 100;
