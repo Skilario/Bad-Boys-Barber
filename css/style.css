@@ -496,55 +496,21 @@ section {
   transform: translateY(0);
 }
 
-/* =============================================
-   ABOUT STRIP
-   ============================================= */
-#about-strip {
-  padding: 4rem 1.5rem;
-  background: var(--black-2);
-  border-top: 1px solid #1e1e1e;
-  border-bottom: 1px solid #1e1e1e;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-
-
-.stat-number {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  color: var(--yellow);
-  line-height: 1;
-  text-shadow: 0 0 20px var(--yellow-glow);
-}
-
-.stat-label {
-  font-family: var(--font-cond);
-  font-size: 0.8rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gray);
-  margin-top: 0.3rem;
-}
 
 /* =============================================
-   GALLERY / DISEÑOS
+   GA<!-- ===================== galeria ===================== -->LLERY / DISEÑOS
    ============================================= */
-#gallery {
+#galeria {
   background: var(--black);
 }
 
-.gallery-grid {
+.galeria-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 
-.gallery-item {
+.galeria-item {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
@@ -552,7 +518,7 @@ section {
   cursor: pointer;
 }
 
-.gallery-item img {
+.galeria-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -560,12 +526,12 @@ section {
   filter: brightness(0.85) saturate(1.1);
 }
 
-.gallery-item:hover img {
+.galeria-item:hover img {
   transform: scale(1.08);
   filter: brightness(1) saturate(1.3);
 }
 
-.gallery-overlay {
+.galeria-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
@@ -576,9 +542,9 @@ section {
   padding: 1.2rem;
 }
 
-.gallery-item:hover .gallery-overlay { opacity: 1; }
+.galeria-item:hover .galeria-overlay { opacity: 1; }
 
-.gallery-overlay span {
+.galeria-overlay span {
   font-family: var(--font-cond);
   font-size: 0.85rem;
   letter-spacing: 2px;
@@ -586,14 +552,13 @@ section {
   color: var(--yellow);
 }
 
-/* Featured large item */
-.gallery-item.featured {
+.galeria-item.featured {
   grid-column: span 2;
   aspect-ratio: 16/9;
 }
 
 @media (max-width: 600px) {
-  .gallery-item.featured { grid-column: span 1; aspect-ratio: 3/4; }
+  .galeria-item.featured { grid-column: span 1; aspect-ratio: 3/4; }
 }
 
 /* =============================================
@@ -724,13 +689,13 @@ section {
   background: var(--black);
 }
 
-.products-grid {
+.productos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
 }
 
-.product-card {
+.producto-card {
   background: var(--black-3);
   border: 1px solid #222;
   border-radius: var(--radius-lg);
@@ -739,31 +704,31 @@ section {
   cursor: pointer;
 }
 
-.product-card:hover {
+.producto-card:hover {
   transform: translateY(-6px);
   border-color: var(--yellow);
   box-shadow: 0 10px 40px rgba(255,187,0,0.12);
 }
 
-.product-img {
+.producto-img {
   aspect-ratio: 1/1;
   overflow: hidden;
 }
 
-.product-img img {
+.producto-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.product-card:hover .product-img img { transform: scale(1.06); }
+.producto-card:hover .producto-img img { transform: scale(1.06); }
 
-.product-info {
+.producto-info {
   padding: 1rem 1.2rem;
 }
 
-.product-tag {
+.producto-tag {
   font-family: var(--font-cond);
   font-size: 0.7rem;
   letter-spacing: 3px;
@@ -772,7 +737,7 @@ section {
   margin-bottom: 0.3rem;
 }
 
-.product-name {
+.producto-name {
   font-family: var(--font-cond);
   font-size: 1.05rem;
   font-weight: 700;
@@ -781,14 +746,14 @@ section {
   line-height: 1.3;
 }
 
-.product-desc {
+.producto-desc {
   font-size: 0.8rem;
   color: var(--gray);
   margin-top: 0.3rem;
   line-height: 1.5;
 }
 
-.product-cta {
+.producto-cta {
   display: inline-block;
   margin-top: 0.8rem;
   font-family: var(--font-cond);
@@ -800,7 +765,7 @@ section {
   transition: border-color var(--transition);
 }
 
-.product-card:hover .product-cta { border-color: var(--yellow); }
+.producto-card:hover .producto-cta { border-color: var(--yellow); }
 
 /* =============================================
    SUCURSALES
@@ -924,19 +889,25 @@ section {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
   margin-bottom: 4rem;
 }
 
-.footer-brand {}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+}
 
 .footer-logo {
   font-family: var(--font-display);
   font-size: 2.2rem;
   letter-spacing: 3px;
   color: var(--white);
-  margin-bottom: 0.8rem;
 }
 
 .footer-logo span { color: var(--yellow); }
@@ -947,7 +918,6 @@ section {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--yellow);
-  margin-bottom: 1rem;
 }
 
 .footer-desc {
@@ -957,32 +927,11 @@ section {
   max-width: 280px;
 }
 
-.footer-socials {
-  display: flex;
-  gap: 0.8rem;
-  margin-top: 1.5rem;
-}
-
-.social-link {
-  width: 38px;
-  height: 38px;
-  border: 1px solid #2a2a2a;
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  transition: border-color var(--transition), background var(--transition);
-}
-
-.social-link:hover {
-  border-color: var(--yellow);
-  background: rgba(255,187,0,0.08);
-}
 
 .footer-col h4 {
   font-family: var(--font-cond);
   font-size: 0.75rem;
+  text-align: center;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--yellow);
@@ -992,6 +941,7 @@ section {
 .footer-col ul {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.6rem;
 }
 
@@ -1003,17 +953,71 @@ section {
 
 .footer-col ul li a:hover { color: var(--white); }
 
+
 .footer-contact p {
-  font-size: 0.88rem;
-  color: var(--gray-2);
-  margin-bottom: 0.6rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--gray-2);
   line-height: 1.5;
+  white-space: nowrap;
 }
 
-.footer-contact p span { color: var(--gray); }
+.footer-contact p span {
+  color: var(--gray);
+}
+
+/* ── Pills de Instagram ── */
+.footer-ig-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.4rem;
+}
+
+.footer-ig-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 50px;
+  padding: 0.45rem 0.85rem 0.45rem 0.55rem;
+  text-decoration: none;
+  width: 220px;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.footer-ig-pill:hover {
+  background: #1a1a1a;
+  border-color: #d6249f55;
+  transform: translateX(3px);
+}
+
+.footer-ig-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #d6249f;
+}
+
+.footer-ig-pill-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.footer-ig-pill-text span {
+  font-size: 0.78rem;
+  color: #ddd;
+  font-weight: 600;
+}
+
+.footer-ig-pill:hover .footer-ig-pill-text span { color: #fff; }
+
 
 .footer-bottom {
   border-top: 1px solid #1a1a1a;
@@ -1039,16 +1043,106 @@ section {
 
 .footer-bottom .made span { color: var(--yellow); }
 
+.ig-float-wrap {
+  position: fixed;
+  bottom: calc(6rem + 52px + 0.75rem);
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+
+.ig-float {
+  position: fixed;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(214,36,159,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ig-float:hover { transform: scale(1.1); 
+  box-shadow: 0 6px 24px rgba(214,36,159,0.65); }
+.ig-float svg { width: 26px; 
+  height: 26px; }
+
+.ig-float-menu {
+  position: absolute;
+  right: 0;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  bottom: 7rem;
+  min-width: 220px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px) scale(0.97);
+  transition: opacity 0.2s, transform 0.2s;
+  transform-origin: bottom right;
+  
+}
+
+.ig-float-menu.open { opacity: 1; 
+  pointer-events: all; 
+  transform: translateY(0) scale(1); }
+
+.ig-float-menu a {
+  display: flex ;       
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: none; /* Quita el subrayado por defecto si no lo quieres */
+  width: 100%;
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.ig-float-menu a:hover { background: #1a1a1a; }
+.ig-menu-label { 
+  display: block;
+  font-size: 0.62rem;
+   color: #888;
+   text-align: center;
+   text-transform: uppercase; 
+   letter-spacing: 0.5px; }
+.ig-menu-handle { 
+  font-size: 0.82rem; 
+  display: flex;
+  text-align: center;
+  justify-content: center; 
+  align-items: center;
+  color: #fff; 
+  font-weight: 600; }
+
+
+
 /* =============================================
-   WHATSAPP FLOAT BUTTON
+   WHATSAPP E INSTAGRAM FLOAT BUTTON
    ============================================= */
 .wa-float {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 999;
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   background: #25D366;
   border-radius: 50%;
   display: flex;
@@ -1071,6 +1165,8 @@ section {
   0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
   50%       { box-shadow: 0 4px 35px rgba(37,211,102,0.7), 0 0 0 10px rgba(37,211,102,0.1); }
 }
+
+
 
 /* =============================================
    CONTACT PAGE
@@ -1095,7 +1191,6 @@ section {
   margin: 0 auto;
 }
 
-.contact-info {}
 
 .contact-info h3 {
   font-family: var(--font-display);
@@ -1181,7 +1276,6 @@ section {
 }
 
 /* Form */
-.contact-form-wrap {}
 
 .contact-form {
   background: var(--black-3);
@@ -1307,9 +1401,11 @@ section {
 @media (max-width: 600px) {
   section { padding: 4rem 1.2rem; }
   .footer-grid { grid-template-columns: 1fr; }
-  .gallery-item.featured { grid-column: span 1; }
+  .galeria-item.featured { grid-column: span 1; }
   .promo-content { padding: 3rem 1.5rem; }
   .hero-ctas { flex-direction: column; align-items: center; }
-  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+  .productos-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+
