@@ -50,11 +50,11 @@ ul { list-style: none; }
   top: 0; left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0 1.5rem;
+  padding: 0;
   height: 68px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   background: transparent;
   transition: background var(--transition), box-shadow var(--transition);
 }
@@ -66,14 +66,11 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  color: var(--white);
-  line-height: 1;
+  width: 120px;
+  height: 100px;
+  margin-left: 0;
+  padding-left: 0;
 }
-
-.nav-logo span { color: var(--yellow); }
 
 .nav-links {
   display: flex;
@@ -233,7 +230,6 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/equipo-local.jpg');
   background-size: cover;
   background-position: center top;
   filter: brightness(0.35) saturate(1.2);
