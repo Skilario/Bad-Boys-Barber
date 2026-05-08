@@ -280,3 +280,7 @@ window.addEventListener('load', () => {
     startAutoScroll();
     revealSection();
 });
+
+
+
+
