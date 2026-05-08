@@ -240,3 +240,47 @@ document.querySelectorAll('.producto-card, .sucursal-card').forEach(card => {
 document.querySelectorAll('.current-year').forEach(el => {
   el.textContent = new Date().getFullYear();
 });
+
+
+// ---  VIAJESS CARRUSEL AUTOMÁTICO ---
+const track = document.querySelector('.carrusel-track');
+let isPaused = false;
+
+function startAutoScroll() {
+    setInterval(() => {
+        if (!isPaused && track) {
+            
+            if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 10) {
+                
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                const step = track.querySelector('.viaje-item').offsetWidth + 20;
+                track.scrollBy({ left: step, behavior: 'smooth' });
+            }
+        }
+    }, 3000); 
+}
+
+const revealSection = () => {
+    const reveals = document.querySelectorAll('.reveal');
+    
+    reveals.forEach(reveal => {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveal.getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+            reveal.classList.add('active');
+        }
+    });
+};
+
+window.addEventListener('scroll', revealSection);
+window.addEventListener('load', () => {
+    startAutoScroll();
+    revealSection();
+});
+
+
+
+
