@@ -50,7 +50,7 @@ ul { list-style: none; }
   top: 0; left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0;
+  padding: 0 5%;
   height: 68px;
   display: flex;
   align-items: center;
@@ -175,6 +175,7 @@ ul { list-style: none; }
   border: none;
   padding: 4px;
   z-index: 1100;
+  margin-left: auto;
 }
 
 .hamburger span {
@@ -624,6 +625,95 @@ section {
   }
 }
 
+
+/* --- SECCIÓN VIAJES --- */
+
+
+/* Centramos el contenedor de los títulos */
+.viajes-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+/* El texto chiquito amarillo */
+.viajes-header .subtitle {
+    color: #ffcc00; /* Tu amarillo característico */
+    font-family: 'Arial', sans-serif; /* O la que uses en el resto del sitio */
+    font-weight: 700;
+    letter-spacing: 4px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* El título grande "WORLD TOUR" */
+.viajes-header .title {
+    color: #ffffff;
+    font-family: 'Impact', 'Arial Black', sans-serif; /* Una fuente gruesa queda mejor */
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* Se agranda en PC y achica en móvil */
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+}
+.viajes-carrusel {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    background: #000;
+}
+
+.carrusel-track {
+    display: flex;
+    width: max-content;
+    animation: scrollInfinito 95s linear infinite; /* 'linear' lo hace fluido */
+}
+@keyframes scrollInfinito {
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-50%);
+  }
+  
+}
+
+.viaje-item {
+    width: 400px; /* Ajustá el ancho a tu gusto */
+    margin: 0 15px;
+    flex-shrink: 0;
+}
+
+.viaje-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    filter: grayscale(30%);
+    transition: transform 0.5s ease;
+}
+
+/* Animación */
+@keyframes scrollInfinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+
+/* Ajuste para móvil: que sea más rápido o las fotos más chicas */
+@media (max-width: 768px) {
+    .viaje-item {
+        width: 300px;
+    }
+    .viaje-item img{
+      height: 400px;
+    }
+}
 
 /* =============================================
    galeria
