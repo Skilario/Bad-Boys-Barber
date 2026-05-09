@@ -54,7 +54,7 @@ ul { list-style: none; }
   height: 68px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   background: transparent;
   transition: background var(--transition), box-shadow var(--transition);
 }
@@ -629,17 +629,16 @@ section {
 /* --- SECCIÓN VIAJES --- */
 
 
-/* Centramos el contenedor de los títulos */
+
 .viajes-header {
     text-align: center;
     margin-bottom: 40px;
     padding: 0 20px;
 }
 
-/* El texto chiquito amarillo */
 .viajes-header .subtitle {
-    color: #ffcc00; /* Tu amarillo característico */
-    font-family: 'Arial', sans-serif; /* O la que uses en el resto del sitio */
+    color: #ffcc00;
+    font-family: 'Arial', sans-serif;
     font-weight: 700;
     letter-spacing: 4px;
     display: block;
@@ -648,16 +647,16 @@ section {
     margin-bottom: 10px;
 }
 
-/* El título grande "WORLD TOUR" */
 .viajes-header .title {
     color: #ffffff;
-    font-family: 'Impact', 'Arial Black', sans-serif; /* Una fuente gruesa queda mejor */
-    font-size: clamp(2.5rem, 8vw, 4.5rem); /* Se agranda en PC y achica en móvil */
+    font-family: 'Impact', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 900;
     text-transform: uppercase;
     line-height: 1;
     margin: 0;
 }
+
 .viajes-carrusel {
     width: 100%;
     overflow: hidden;
@@ -668,67 +667,62 @@ section {
 .carrusel-track {
     display: flex;
     width: max-content;
-    animation: scrollInfinito 95s linear infinite; /* 'linear' lo hace fluido */
-}
-@keyframes scrollInfinito {
-  0%{
-    transform: translateX(0);
-  }
-  100%{
-    transform: translateX(-50%);
-  }
-  
+    animation: scrollInfinito 40s linear infinite; 
 }
 
 .viaje-item {
-    width: 400px; /* Ajustá el ancho a tu gusto */
-    margin: 0 15px;
+    width: 450px; 
+    margin: 0 20px;
     flex-shrink: 0;
 }
 
 .viaje-item img {
     width: 100%;
-    height: 500px;
+    height: 550px;
     object-fit: cover;
-    border-radius: 12px;
-    filter: grayscale(30%);
-    transition: transform 0.5s ease;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
-/* Animación */
+
 @keyframes scrollInfinito {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%); 
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
 }
 
-/* Ajuste para móvil: que sea más rápido o las fotos más chicas */
+
 @media (max-width: 768px) {
-    .viaje-item {
-        width: 300px;
-    }
-    .viaje-item img{
-      height: 400px;
-    }
+  .viaje-item {
+    width: 280px;
+    margin: 0 10px;
+  }
+  .viaje-item img {
+    height: 400px;
+  }
+  .carrusel-track {
+    animation: scrollInfinito 60s linear infinite;
+  }
 }
-
 /* =============================================
    galeria
    ============================================= */
-#galeria {
-  background: var(--black);
+.galeria-carrusel {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
 }
 
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+
+.galeria-track {
+  display: flex;
+  width: max-content;
+  animation: scrollInfinitoDisenos 25s linear infinite;
 }
 
 .galeria-item {
+  width: 500px; /* Ancho de las fotos de los cortes */
+  margin: 0 10px;
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
@@ -736,47 +730,20 @@ section {
   cursor: pointer;
 }
 
-.galeria-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease, filter 0.6s ease;
-  filter: brightness(0.85) saturate(1.1);
+
+@keyframes scrollInfinitoDisenos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); } 
 }
 
-.galeria-item:hover img {
-  transform: scale(1.08);
-  filter: brightness(1) saturate(1.3);
-}
 
-.galeria-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity var(--transition);
-  display: flex;
-  align-items: flex-end;
-  padding: 1.2rem;
-}
-
-.galeria-item:hover .galeria-overlay { opacity: 1; }
-
-.galeria-overlay span {
-  font-family: var(--font-cond);
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--yellow);
-}
-
-.galeria-item.featured {
-  grid-column: span 2;
-  aspect-ratio: 16/9;
-}
-
-@media (max-width: 600px) {
-  .galeria-item.featured { grid-column: span 1; aspect-ratio: 3/4; }
+@media (max-width: 768px) {
+  .galeria-item {
+    width: 250px;
+  }
+  .galeria-track {
+    animation-duration: 30s;
+  }
 }
 
 /* =============================================
