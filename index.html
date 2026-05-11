@@ -2,26 +2,60 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
   <meta name="description" content="Barber Bad Boys — Más de 7 años en Freestyle, Color y Rulos. Del Cruce pal Mundo. Moreno, Buenos Aires." />
-  <title>Barber Bad Boys | Del Cruce Pal Mundo</title>
-
-
-  <!-- Google Fonts -->
+  <title>Barber Bad Boys | Barberia Cruce Castelar</title>
+  <link rel="icon" type="image/x-icon" href="images/Logos/Favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarberShop", 
+  "name": "Bad Boys Barber",
+  "url": "https://badboysbarber.com.ar",
+  "logo": "https://badboysbarber.com.ar/logo/LogoBadBoys.svg",
+  "description": "Barbería profesional, academia de barberos y venta de productos en Moreno, San Miguel y alrededores.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Moreno",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Moreno" },
+    { "@type": "City", "name": "San Miguel" },
+    { "@type": "City", "name": "Muñiz" },
+    { "@type": "City", "name": "Bella Vista" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Bad Boys",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Barbería" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Academia de Barbería" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Warehouse", "name": "Venta de Productos" }
+      }
+    ]
+  }
+}
+</script>
+        </script>
 </head>
-<body>
-
- <!--NAVBAR-->
+  <!-- ===== NAVBAR ===== -->
   <nav id="navbar">
-    <div class="LogoBa"></div>
     <a href="index.html">
-  <img src="images/Logos/LogoBadBoys.svg" alt="Barber Bad Boys" class="nav-logo">
+      <img src="images/Logos/LogoBadBoys.svg" alt="Barber Bad Boys" class="nav-logo">
     </a>
 
     <ul class="nav-links">
@@ -34,12 +68,12 @@
       <li><a href="#sucursales">Sucursales</a></li>
     </ul>
 
-    <button class="hamburger" aria-label="Menú">
+    <button class="hamburger" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Mobile Menu -->
+  <!-- Menú móvil -->
   <div class="mobile-menu">
     <a href="#hero">Inicio</a>
     <a href="#nosotros">Nosotros</a>
@@ -50,34 +84,40 @@
     <a href="#sucursales">Sucursales</a>
   </div>
 
- <!--HERO-->
+  <!-- ===== HERO ===== -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-scanline"></div>
 
     <div class="hero-content">
-      <p class="hero-eyebrow">✂ Más de 7 años de trayectoria</p>
+      <p class="hero-eyebrow">✂ Más de 8 años de trayectoria</p>
 
       <h1 class="hero-title">
-        BARBER
-        <span class="accent">BAD BOYS</span>
+        <span class="hero-logo-contenedor">
+          <img
+            src="images/Logos/LogoBadBoys.svg"
+            alt="Bad Boys- Cruce Castelar - Moreno, Buenos Aires"
+            class="hero-logo-titulo"
+          />
+        </span>
       </h1>
 
       <p class="hero-slogan">DEL CRUCE PAL MUNDO</p>
-      <h2 class="hero-sub">Freestyle · Global · Diseños · Rulos · Claritos - Moreno  Buenos Aires</h2>
+      <h2 id="hero-oculto">Freestyle · Global · Diseños · Rulos · Claritos — Moreno, Buenos Aires</h2>
 
       <div class="hero-ctas">
-        <a href="https://wa.me/5491136596097?text=Hola!%20Quiero%20sacar%20turno" target="_blank" rel="noopener" class="btn btn-primary">
-           Sacar Turno
+        <a
+          href="https://wa.me/5491136596097?text=Hola!%20Quiero%20sacar%20turno"
+          target="_blank" rel="noopener"
+          class="btn btn-primary"
+        >Sacar Turno
         </a>
-        <a href="#galeria" class="btn btn-outline">
-          Ver Diseños ↓
-        </a>
+        <a href="#galeria" class="btn btn-outline">Ver Diseños ↓</a>
       </div>
     </div>
 
-    <div class="scroll-hint">
+    <div class="scroll-hint" aria-hidden="true">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
@@ -85,123 +125,246 @@
     </div>
   </section>
 
+  <!-- ===== NOSOTROS ===== -->
+<section id="nosotros" class="reveal">
+  <div class="container">
+    <div class="academia-grid">
 
- <!--NOSOTROS-->
-  <section id="nosotros" class="reveal">
-    <div class="container">
-        <div class="academia-grid"> <div class="nosotros-content">
-              <p class="section-label">Nuestra Esencia</p>
-              <h2 class="section-title">Más que una <span class="accent">Barbería</span></h2>
+      <!-- COLUMNA 1: TODO EL TEXTO -->
+      <div class="nosotros-content">
+        <p class="section-label">Nuestra Esencia</p>
+        <h2 class="section-title">Más que una <span class="accent">Barbería</span></h2>
 
-              <div class="section-desc">
-                <p><strong>Bad Boys</strong> no nació en 2019; nació mucho antes, en años de esfuerzo para que el Cruce Castelar tuviera la barbería que se merecía.</p>
-                <p>Lo que arrancó como un sueño en la Galería Iberá hoy pisa fuerte con dos sucursales y la mística de siempre.</p>
-                <p>No solo cortamos, dominamos todo el juego: desde el freestyle más crudo y cortes globales, hasta expertos en rulos y claritos. Fusionamos la técnica más fina con el respeto por nuestra calle.</p>
-                <p><strong id="nosotros-letra">Somos Calidad, Identidad y Barrio.</strong></p>
+        <div class="section-desc nosotros-desc">
+          <p><strong>Bad Boys</strong> no nació en 2018; nació mucho antes, en años de esfuerzo para que el Cruce Castelar tuviera la barbería que se merecía.</p>
+          <p>Lo que arrancó como un sueño en la Galería Ibera hoy pisa fuerte con dos sucursales, nuestro propio local de insumos y una academia de barberos, manteniendo la mística de siempre.</p>
+          <p>No solo cortamos, dominamos todo el juego: Desde el freestyle más crudo, cortes en tendencia y colorimetría (globales y claritos), hasta expertos en rulos y ondulaciones.</p>
+        </div>
+        
+        <p><strong id="nosotros-letra">Somos Calidad, Identidad y Barrio.</strong></p>
+
+        <div class="academia-features">
+          <div class="feature-item">
+            <div class="feature-text">
+              <span class="numero">01</span>
+              <div class="texto">
+                <h4>Técnica Superior</h4>
+                <p>Dominamos cada ángulo con precisión milimétrica. Combinamos herramientas con cortes de autor y degradados impecables. No solo cortamos, creamos tu estilo.</p>
               </div>
-                              
-                <div class="academia-features"> <div class="feature-item">
-                        <div class="feature-text">
-                          <span class="numero">01</span>
-                          <div class="texto">
-                            <h4>Técnica Superior</h4>
-                            <p>Dominamos cada ángulo con precisión milimétrica. Combinamos herramientas con cortes de autor y degradados impecables. No solo cortamos, esculpimos tu estilo.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-text">
-                          <span class="numero">02</span>
-                          <div class="texto">
-                            <h4>Cultura Urbana</h4>
-                            <p>Estilo de la calle a la silla, respetando la esencia de cada barrio.
-                               Fusionamos tendencias mundiales con el pulso de nuestra ciudad. Elevamos el estándar urbano, combinando herramientas de precisión con el arte de la calle.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <div class="nosotros-img-wrap academia-img-wrap"> <img src="images/barbero-mundo.jpg" alt="Barbería Bad Boys interior">
-                <div class="academia-badge">
-                    <div class="inner">ESTILO<br>PROPIO</div>
-                </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-text">
+              <span class="numero">02</span>
+              <div class="texto">
+                <h4>Cultura Urbana</h4>
+                <p>Estilo de la calle a la silla, respetando la esencia del barrio. Trajimos las tendencias mundiales a nuestra ciudad.</p>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+
+      <!-- COLUMNA 2: LA IMAGEN -->
+      <div class="nosotros-img-wrap">
+        <img src="images/Esencia/barbero-mundo.jpg" alt="Barbería Bad Boys interior en Moreno, Buenos Aires" />
+        <div class="academia-badge">
+          <div class="inner">ESTILO<br>PROPIO</div>
+        </div>
+      </div>
+
+    </div> <!-- Aquí cierra la academia-grid -->
+  </div>
 </section>
 
-<!-- VIAJES -->
-<section id="viajes" class="viajes reveal">
+  <!-- ===== WORLD TOUR (VIAJES) ===== -->
+  <section id="viajes" class="viajes reveal">
     <div class="viajes-header">
-        <span class="subtitle">DEL CRUCE PAL MUNDO</span>
-        <h2 class="title">WORLD TOUR</h2>
+      <span class="viajes-subtitulo">DEL CRUCE PAL MUNDO</span>
+      <h2 class="viajes-titulo">WORLD TOUR</h2>
     </div>
 
-    <div class="viajes-carrusel">
-        <div class="viajes-grid carrusel-track">
-<div class="carrusel-track">
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_0090.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_0192.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1340.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1478.JPG.jpeg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1481.JPG.jpeg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1520.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1607.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_7717.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_9355.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_9786.jpg" alt="Bad Boys"></div>
+    <!-- Carrusel manual de viajes -->
+    <div class="carrusel-contenedor" id="carrusel-viajes">
 
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_0090.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_0192.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1340.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1478.JPG.jpeg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1481.JPG.jpeg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1520.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_1607.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_7717.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_9355.jpg" alt="Bad Boys"></div>
-    <div class="viaje-item"><img src="Bad boys fotos juli/IMG_9786.jpg" alt="Bad Boys"></div>
-</div>
-            <!-- govir si ves esto es para que no quede en negro cuando se pasa la ultima foto y se hace un ciclo infinito nasi -->
+      <!-- Flecha anterior -->
+      <button class="carrusel-flecha carrusel-prev" aria-label="Anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Área visible -->
+      <div class="carrusel-viewport">
+        <div class="carrusel-track">
+
+          <!-- Ítem 1 -->
+          <div class="viaje-item">
+            <img src="images/Viajes/SanMiguel.webp" alt="San Miguel, Buenos Aires" loading="lazy">
+            <div class="viaje-info">
+              <span class="viaje-titulo">San Miguel</span>
+              <span class="viaje-pais">Buenos Aires</span>
+            </div>
+          </div>
+
+          <!-- Ítem 2 -->
+          <div class="viaje-item">
+            <img src="images/Viajes/Mendoza.webp" alt="Mendoza, Argentina" loading="lazy">
+            <div class="viaje-info">
+              <span class="viaje-titulo">Mendoza</span>
+              <span class="viaje-pais">Argentina</span>
+            </div>
+          </div>
+
+          <!-- Ítem 3 -->
+          <div class="viaje-item">
+            <img src="images/Viajes/Laisla.webp" alt="La isla - Santa Fe, Argentina" loading="lazy">
+            <div class="viaje-info">
+              <span class="viaje-titulo">La isla</span>
+              <span class="viaje-pais">Argentina</span>
+            </div>
+          </div>
+
+          <!-- Ítem 4 -->
+          <div class="viaje-item">
+            <img src="images/Viajes/SantiagodelEstero.webp" alt="Santiago del Estero, Argentina" loading="lazy">
+            <div class="viaje-info">
+              <span class="viaje-titulo">Santiago del Estero</span>
+              <span class="viaje-pais">Argentina</span>
+            </div>
+          </div>
+
+
         </div>
+      </div>
+
+      <!-- Flecha siguiente -->
+      <button class="carrusel-flecha carrusel-next" aria-label="Siguiente">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+     
+      <div class="carrusel-puntos" aria-label="Páginas del carrusel"></div>
+
     </div>
-</section>
-
-   <!-- GALERIA -->
-
-  
-  <section id="galeria">
-    <div class="container">
-      <p class="section-label reveal">Nuestro Trabajo</p>
-      <h2 class="section-title reveal">Diseños y <span class="accent">Freestyle</span></h2>
-      <p class="section-desc reveal">Cortes de autor, degradados perfectos y estilos únicos. Cada cabeza es un lienzo.</p>
-
-      <div class="galeria-grid">
-        <div class="galeria-item reveal">
-          <img src="images/Cortes/Corte1.webp" alt="Degrade comprimido Hecho en Bad Boys - Trujui - Moreno" loading="lazy" />
-          <div class="galeria-overlay"><span>Degradado</span></div>
-        </div>
-
-        <div class="galeria-item reveal" data-delay="80">
-          <img src="images/Cortes/Global.webp" alt="Global Hecho en Cruce Castelar - Moreno - Buenos Aires" loading="lazy" />
-          <div class="galeria-overlay"><span>Global</span></div>
-        </div>
-
-        <div class="galeria-item reveal" data-delay="160">
-          <img src="images/Cortes/Rulos.webp" alt="Rulos hechos en Bad Boys - Trujui" loading="lazy" />
-          <div class="galeria-overlay"><span>Rulos</span></div>
-        </div>
-
-    
   </section>
 
- <!--ACADEMIA-->
- <section id="academia">
+  <!-- ===== GALERÍA DE DISEÑOS ===== -->
+  <section id="galeria" class="viajes reveal"> 
+  <div class="viajes-header">
+    <span class="viajes-subtitulo">NUESTRO TRABAJO</span>
+    <h2 class="viajes-titulo">DISEÑOS Y <span class="accent">FREESTYLE</span></h2>
+  </div>
+
+  <!-- Carrusel manual de galería (Estructura unificada) -->
+  <div class="carrusel-contenedor" id="carrusel-galeria">
+
+    <!-- Flecha anterior -->
+    <button class="carrusel-flecha carrusel-prev" aria-label="Anterior">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Área visible -->
+    <div class="carrusel-viewport">
+      <div class="carrusel-track">
+
+        <!-- Ítem 1 -->
+        <div class="viaje-item">
+          <img src="images/Cortes/Corte1.webp" alt="Degradado en Moreno" loading="lazy">
+          <div class="viaje-info">
+            <span class="viaje-titulo">Degradado</span>
+            <span class="viaje-pais">Bad Boys Barber</span>
+          </div>
+        </div>
+
+        <!-- Ítem 2 -->
+        <div class="viaje-item">
+          <img src="images/Cortes/Global.webp" alt="Claritos en Moreno" loading="lazy">
+          <div class="viaje-info">
+            <span class="viaje-titulo">Claritos</span>
+            <span class="viaje-pais">Bad Boys Barber</span>
+          </div>
+        </div>
+
+        <!-- Ítem 3 -->
+        <div class="viaje-item">
+          <img src="images/Cortes/Rulos.webp" alt="Rulos en Moreno" loading="lazy">
+          <div class="viaje-info">
+            <span class="viaje-titulo">Rulos</span>
+            <span class="viaje-pais">Bad Boys Barber</span>
+          </div>
+        </div>
+
+        <!-- Ítem 4 -->
+        <div class="viaje-item">
+          <img src="images/Cortes/IMG_1520.webp" alt="Degradado en Moreno" loading="lazy">
+          <div class="viaje-info">
+            <span class="viaje-titulo">Degradado</span>
+            <span class="viaje-pais">Bad Boys Barber</span>
+          </div>
+        </div>
+        
+        <!-- Ítem 1 -->
+        <div class="viaje-item">
+          <img src="images/Cortes/IMG_5696.webp" alt="Diseño en Moreno" loading="lazy">
+          <div class="viaje-info">
+            <span class="viaje-titulo">Diseño</span>
+            <span class="viaje-pais">Bad Boys Barber</span>
+          </div>
+        </div>
+
+        <!-- Ítem 2 -->
+        <div class="viaje-item">
+          <img src="images/Cortes/IMG_6217.webp" alt="Claritos en Moreno" loading="lazy">
+          <div class="viaje-info">
+            <span class="viaje-titulo">Claritos y Rulos</span>
+            <span class="viaje-pais">Bad Boys Barber</span>
+          </div>
+        </div>
+
+        <!-- Ítem 3 -->
+        <div class="viaje-item">
+          <img src="images/Cortes/IMG_8502.webp" alt="Global en Moreno" loading="lazy">
+          <div class="viaje-info">
+            <span class="viaje-titulo">Global</span>
+            <span class="viaje-pais">Bad Boys Barber</span>
+          </div>
+        </div>
+
+        <!-- Ítem 4 -->
+        <div class="viaje-item">
+          <img src="images/Cortes/IMG_6447.webp" alt="Claritos en Moreno" loading="lazy">
+          <div class="viaje-info">
+            <span class="viaje-titulo">Claritos</span>
+            <span class="viaje-pais">Bad Boys Barber</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  
+    <button class="carrusel-flecha carrusel-next" aria-label="Siguiente">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <div class="carrusel-puntos" aria-label="Páginas del carrusel"></div>
+
+  </div>
+</section>
+  <!-- ===== ACADEMIA ===== -->
+  <section id="academia">
     <div class="container">
       <div class="academia-grid">
+
         <div class="academia-img-wrap reveal">
-          <img src="images/Academia/Academia.webp" alt="Academia Bad Boys En Cruce Castelar - Moreno - Buenos Aires" />
+          <img src="images/Academia/Academia.webp" alt="Academia Bad Boys en Cruce Castelar — Moreno, Buenos Aires" />
           <div class="academia-badge">
             <div class="inner">⚡<br>CURSO<br>PRO</div>
           </div>
@@ -242,20 +405,22 @@
               </div>
             </div>
           </div>
-
-          <a href="https://wa.me/5491136596097?text=Hola!%20Quiero%20info%20sobre%20el%20Curso%20de%20barbería%20Bad%20Boys" target="_blank" rel="noopener" class="btn btn-primary reveal">
-             Consultar por el Curso
+          <div class="hero-ctas">
+        <a
+          href="https://wa.me/5491136596097?text=Hola!%20Quiero%20info%20sobre%20el%20Curso%20de%20barber%C3%ADa%20Bad%20Boys"
+          target="_blank" rel="noopener" class="btn btn-primary"
+        >Consultar por el Curso
           </a>
-        </div>
+
       </div>
     </div>
   </section>
 
- <!--INSUMOS-->
+  <!-- ===== INSUMOS ===== -->
   <section id="insumos">
     <div class="container">
       <p class="section-label reveal">Tienda Profesional</p>
-      <h2 class="section-title reveal">Insumos y <span class="accent">productos</span></h2>
+      <h2 class="section-title reveal">Insumos y <span class="accent">Productos</span></h2>
       <p class="section-desc reveal">Todo lo que el barbero necesita, en un solo lugar. Stock permanente y las mejores marcas del mercado.</p>
 
       <div class="productos-grid">
@@ -322,72 +487,68 @@
 
       </div>
 
-      <div style="text-align:center; margin-top:3rem;">
+      <div class="catalogo-link">
         <a href="Archivos/CatalogoINSUMOS-Mayo.pdf" target="_blank" rel="noopener" class="btn btn-outline reveal">
-           Ver Catálogo Completo
+          Ver Catálogo Completo
         </a>
       </div>
     </div>
   </section>
 
- <!--SUCURSALES-->
-<section id="sucursales">
-  <div class="container">
-    <p class="section-label reveal">Encontranos</p>
-    <h2 class="section-title reveal">Nuestras <span class="accent">Sucursales</span></h2>
-    <p class="section-desc reveal">Dos sedes para atenderte. Vení a vivir la experiencia Bad Boys.</p>
+  <!-- ===== SUCURSALES ===== -->
+  <section id="sucursales">
+    <div class="container">
+      <p class="section-label reveal">Encontranos</p>
+      <h2 class="section-title reveal">Nuestras <span class="accent">Sucursales</span></h2>
+      <p class="section-desc reveal">Dos sedes para atenderte. Vení a vivir la experiencia Bad Boys.</p>
 
-    <div class="sucursales-grid">
+      <div class="sucursales-grid">
 
-      <article class="sucursal-card main-branch reveal">
-        <div class="sucursal-img">
-          <img src="images/Sucursal.png" alt="Barbería Bad Boys — Sede Principal Cruce Castelar" />
-        </div>
-        <div class="sucursal-body">
-          <span class="sucursal-badge">Sede Principal</span>
-          <h3 class="sucursal-name">BAD BOYS AVENIDA</h3>
-          
-          <address class="sucursal-info">
-            <span class="sucursal-calle">Av. Dr. Néstor Carlos Kirchner 3753</span>
-            <span class="sucursal-ciudad">Moreno, Buenos Aires</span>
-            <span class="sucursal-barrio">Cruce Castelar</span>
-          </address>
-
-          <div class="sucursal-links">
-            <a href="https://wa.me/5491136596097?text=Hola!%20Quiero%20turno%20en%20Moreno" target="_blank" rel="noopener">💬 WhatsApp</a>
-            <a href="https://www.instagram.com/badboys_barber_shop/" target="_blank" rel="noopener">📸 Instagram</a>
-            <a href="http://maps.google.com/?q=Av.+Dr.+Néstor+Carlos+Kirchner+3753+Moreno" target="_blank" rel="noopener">📍 Cómo llegar</a>
+        <article class="sucursal-card main-branch reveal">
+          <div class="sucursal-img">
+            <img src="images/Sucursales/Sucursal2.jpg" alt="Barbería Bad Boys — Sede Principal Cruce Castelar" loading="lazy" />
           </div>
-        </div>
-      </article>
-
-      <article class="sucursal-card reveal" data-delay="120">
-        <div class="sucursal-img">
-          <img src="images/galeria.png" alt="Barbería Bad Boys - Sucursal Galería Iberá" />
-        </div>
-        <div class="sucursal-body">
-          <span class="sucursal-badge">Segunda Sede</span>
-          <h3 class="sucursal-name">BAD BOYS GALERÍA</h3>
-          
-          <address class="sucursal-info">
-            <span class="sucursal-calle">Av. Dr. Néstor Carlos Kirchner 3778</span>
-            <span class="sucursal-ciudad">Moreno, Buenos Aires</span>
-            <span class="sucursal-barrio">Cruce Castelar</span>
-          </address>
-
-          <div class="sucursal-links">
-            <a href="https://wa.me/5491136596097?text=Hola!%20Quiero%20info%20de%20la%20segunda%20sede" target="_blank" rel="noopener">💬 WhatsApp</a>
-            <a href="https://www.instagram.com/badboys_barber_shop/" target="_blank" rel="noopener">📸 Instagram</a>
-            <a href="http://maps.google.com/?q=Av.+Dr.+Néstor+Carlos+Kirchner+3778+Moreno" target="_blank" rel="noopener">📍 Cómo llegar</a>
+          <div class="sucursal-body">
+            <span class="sucursal-badge">Sede Principal</span>
+            <h3 class="sucursal-name">BAD BOYS AVENIDA</h3>
+            <address class="sucursal-info">
+              <span class="sucursal-calle">Av. Dr. Néstor Carlos Kirchner 3753</span>
+              <span class="sucursal-ciudad">Moreno, Buenos Aires</span>
+              <span class="sucursal-barrio">Cruce Castelar</span>
+            </address>
+            <div class="sucursal-links">
+              <a href="https://wa.me/5491136596097?text=Hola!%20Quiero%20turno%20en%20Moreno" target="_blank" rel="noopener">💬 WhatsApp</a>
+              <a href="https://www.instagram.com/badboys_barber_shop/" target="_blank" rel="noopener">📸 Instagram</a>
+              <a href="https://www.google.com/maps/place/Bad+Boys+Barber+Shop+-+Sucursal+Avenida/@-34.5849228,-58.8308615,12z/data=!4m10!1m2!2m1!1sbad+boys!3m6!1s0x95bc97001653efc5:0xc6c2eb9dd433da29!8m2!3d-34.5852029!4d-58.7478012!15sCghiYWQgYm95c1oKIghiYWQgYm95c5IBC2JhcmJlcl9zaG9wmgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDIxT2RXUjZXWGxUTTJneFUxaFJlRkl5U2paV1ZYTXlZMjVhYTJGWFl4QULgAQD6AQQIABA-!16s%2Fg%2F11ycj3mr4t?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 Cómo llegar</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
+        <article class="sucursal-card reveal" data-delay="120">
+          <div class="sucursal-img">
+            <img src="images/Sucursales/galeria.webp" alt="Barbería Bad Boys — Sucursal Galería Iberá" loading="lazy" />
+          </div>
+          <div class="sucursal-body">
+            <span class="sucursal-badge">Segunda Sede</span>
+            <h3 class="sucursal-name">BAD BOYS GALERÍA</h3>
+            <address class="sucursal-info">
+              <span class="sucursal-calle">Av. Dr. Néstor Carlos Kirchner 3778</span>
+              <span class="sucursal-ciudad">Moreno, Buenos Aires</span>
+              <span class="sucursal-barrio">Cruce Castelar</span>
+            </address>
+            <div class="sucursal-links">
+              <a href="https://wa.me/5491136596097?text=Hola!%20Quiero%20info%20de%20la%20segunda%20sede" target="_blank" rel="noopener">💬 WhatsApp</a>
+              <a href="https://www.instagram.com/badboys_barber_shop/" target="_blank" rel="noopener">📸 Instagram</a>
+              <a href="https://www.google.com/maps/place/Bad+Boys+Barber+Shop/@-34.5850963,-58.751036,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcbdd90ff8ac1d:0x8421d72783e635c1!8m2!3d-34.5851007!4d-58.7484611!16s%2Fg%2F11h6s7_7_2?entry=ttu" target="_blank" rel="noopener">📍 Cómo llegar</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
- <!--FOOTER-->
+  <!-- ===== FOOTER ===== -->
   <footer id="footer">
     <div class="container">
       <div class="footer-grid">
@@ -416,21 +577,15 @@
           <div class="footer-ig-list">
             <a href="https://www.instagram.com/badboys_barber_shop/" target="_blank" rel="noopener" class="footer-ig-pill">
               <svg class="footer-ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              <div class="footer-ig-pill-text">
-                <span>Barber Shop Bad Boys</span>
-              </div>
+              <div class="footer-ig-pill-text"><span>Barber Shop Bad Boys</span></div>
             </a>
             <a href="https://www.instagram.com/barberinsumos.badboys/" target="_blank" rel="noopener" class="footer-ig-pill">
               <svg class="footer-ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              <div class="footer-ig-pill-text">
-                <span>Insumos Bad Boys</span>
-              </div>
+              <div class="footer-ig-pill-text"><span>Insumos Bad Boys</span></div>
             </a>
             <a href="https://www.instagram.com/academia.badboys/" target="_blank" rel="noopener" class="footer-ig-pill">
               <svg class="footer-ig-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              <div class="footer-ig-pill-text">
-                <span>Academia Bad Boys</span>
-              </div>
+              <div class="footer-ig-pill-text"><span>Academia Bad Boys</span></div>
             </a>
           </div>
         </div>
@@ -448,16 +603,23 @@
     </div>
   </footer>
 
-  <!-- Instagram Float -->
-  <div class="ig-float-wrap">
-    <a href="https://www.instagram.com/badboys_barber_shop/" target="_blank" rel="noopener" class="ig-float" id="igFloatBtn" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-     </div>
-  </div>
+  <!-- ===== BOTÓN FLOTANTE INSTAGRAM ===== -->
+  <a
+    href="https://www.instagram.com/badboys_barber_shop/"
+    target="_blank" rel="noopener"
+    class="ig-float"
+    aria-label="Instagram"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
   </a>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/5491136596097?text=Hola!%20Quiero%20sacar%20turno" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <!-- ===== BOTÓN FLOTANTE WHATSAPP ===== -->
+  <a
+    href="https://wa.me/5491136596097?text=Hola!%20Quiero%20sacar%20turno"
+    target="_blank" rel="noopener"
+    class="wa-float"
+    aria-label="WhatsApp"
+  >
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
@@ -466,5 +628,3 @@
   <script src="js/script.js"></script>
 </body>
 </html>
-
-

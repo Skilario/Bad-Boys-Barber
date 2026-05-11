@@ -1,10 +1,14 @@
-/* =============================================
-   BARBER BAD BOYS — script.js
-   ============================================= */
+/* ============================================================
+   BARBER BAD BOYS — js/script.js
+   Versión optimizada: carruseles manuales con flechas y puntos,
+   soporte táctil, reveal en scroll, lightbox de galería.
+   ============================================================ */
 
 'use strict';
 
-/* ---- Navbar scroll ---- */
+/* ============================================================
+   NAVBAR — agrega clase al hacer scroll
+   ============================================================ */
 const navbar = document.getElementById('navbar');
 if (navbar) {
   window.addEventListener('scroll', () => {
@@ -12,275 +16,439 @@ if (navbar) {
   }, { passive: true });
 }
 
-/* ---- Hamburger / Mobile Menu ---- */
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
+/* ============================================================
+   HAMBURGER — abre/cierra el menú móvil
+   ============================================================ */
+const hamburger  = document.querySelector('.hamburger');
+const menuMovil  = document.querySelector('.mobile-menu');
 
-if (hamburger && mobileMenu) {
+if (hamburger && menuMovil) {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    menuMovil.classList.toggle('open');
+    document.body.style.overflow = menuMovil.classList.contains('open') ? 'hidden' : '';
   });
 
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
+  // Cierra el menú al hacer clic en un enlace
+  menuMovil.querySelectorAll('a').forEach(enlace => {
+    enlace.addEventListener('click', () => {
       hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
+      menuMovil.classList.remove('open');
       document.body.style.overflow = '';
     });
   });
 }
 
-/* ---- Reveal on scroll ---- */
-const reveals = document.querySelectorAll('.reveal');
+/* ============================================================
+   REVEAL AL SCROLL — anima elementos con clase .reveal
+   ============================================================ */
+const elementosReveal = document.querySelectorAll('.reveal');
 
-if (reveals.length) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+if (elementosReveal.length) {
+  const observador = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Stagger children
-        entry.target.style.transitionDelay = `${(entry.target.dataset.delay || 0)}ms`;
+        entry.target.style.transitionDelay = `${entry.target.dataset.delay || 0}ms`;
         entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
+        observador.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
 
-  reveals.forEach((el, i) => {
-    el.dataset.delay = el.dataset.delay || (i % 4) * 80;
-    revealObserver.observe(el);
+  elementosReveal.forEach((el, i) => {
+    // Si no tiene delay definido, calculamos uno escalonado
+    if (!el.dataset.delay) {
+      el.dataset.delay = (i % 4) * 80;
+    }
+    observador.observe(el);
   });
 }
 
-/* ---- Active nav link on scroll ---- */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+/* ============================================================
+   ENLACE ACTIVO EN NAVBAR al hacer scroll
+   ============================================================ */
+const secciones    = document.querySelectorAll('section[id]');
+const enlacesNav   = document.querySelectorAll('.nav-links a');
 
-if (sections.length && navLinks.length) {
+if (secciones.length && enlacesNav.length) {
   window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    let seccionActual = '';
+    secciones.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 130) {
+        seccionActual = sec.id;
+      }
     });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}` || link.getAttribute('href') === `./${current}`) {
-        link.classList.add('active');
+    enlacesNav.forEach(enlace => {
+      enlace.classList.remove('active');
+      if (enlace.getAttribute('href') === `#${seccionActual}`) {
+        enlace.classList.add('active');
       }
     });
   }, { passive: true });
 }
 
-/* ---- galeria lightbox (simple) ---- */
-const galeriaItems = document.querySelectorAll('.galeria-item');
-
-if (galeriaItems.length) {
-  // Create lightbox
-  const lb = document.createElement('div');
-  lb.id = 'lightbox';
-  lb.style.cssText = `
-    position:fixed; inset:0; z-index:9999;
-    background:rgba(0,0,0,0.95);
-    display:none; align-items:center; justify-content:center;
-    cursor:zoom-out;
-  `;
-
-  const lbImg = document.createElement('img');
-  lbImg.style.cssText = `
-    max-width:90vw; max-height:90vh;
-    border-radius:8px;
-    box-shadow: 0 0 60px rgba(255,187,0,0.2);
-    object-fit:contain;
-  `;
-
-  const lbClose = document.createElement('button');
-  lbClose.innerHTML = '&times;';
-  lbClose.style.cssText = `
-    position:absolute; top:1.5rem; right:2rem;
-    background:none; border:none;
-    font-size:2.5rem; color:#fff; cursor:pointer;
-    line-height:1; opacity:0.7; transition:opacity 0.2s;
-  `;
-  lbClose.onmouseenter = () => lbClose.style.opacity = '1';
-  lbClose.onmouseleave = () => lbClose.style.opacity = '0.7';
-
-  lb.appendChild(lbImg);
-  lb.appendChild(lbClose);
-  document.body.appendChild(lb);
-
-  const openLb = (src) => {
-    lbImg.src = src;
-    lb.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeLb = () => {
-    lb.style.display = 'none';
-    document.body.style.overflow = '';
-  };
-
-  galeriaItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const img = item.querySelector('img');
-      if (img) openLb(img.src);
-    });
-  });
-
-  lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
-  lbClose.addEventListener('click', closeLb);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLb();
-  });
-}
-
-/* ---- Smooth scroll for anchor links ---- */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', (e) => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
+/* ============================================================
+   SMOOTH SCROLL — suaviza los anclajes internos
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+  enlace.addEventListener('click', (e) => {
+    const destino = document.querySelector(enlace.getAttribute('href'));
+    if (destino) {
       e.preventDefault();
-      const offset = 68; // navbar height
+      const alturaNavbar = 68;
       window.scrollTo({
-        top: target.offsetTop - offset,
+        top: destino.offsetTop - alturaNavbar,
         behavior: 'smooth'
       });
     }
   });
 });
 
-/* ---- Contact Form Validation (contacto.html) ---- */
-const contactForm = document.getElementById('contactForm');
+/* ============================================================
+   CARRUSEL GENÉRICO
+   Maneja la navegación manual (flechas + puntos + swipe táctil)
+   para cualquier carrusel con la estructura:
+     .carrusel-contenedor
+       .carrusel-flecha.carrusel-prev
+       .carrusel-viewport > .carrusel-track > [ítems]
+       .carrusel-flecha.carrusel-next
+       .carrusel-puntos
+   ============================================================ */
 
-if (contactForm) {
-  const fields = {
-    nombre:  { el: document.getElementById('nombre'),  min: 2,  msg: 'Ingresá tu nombre completo.' },
-    email:   { el: document.getElementById('email'),   regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg: 'Email inválido.' },
-    telefono:{ el: document.getElementById('telefono'),regex: /^[\d\s\+\-]{7,}$/, msg: 'Ingresá un teléfono válido.' },
-    servicio:{ el: document.getElementById('servicio'),required: true, msg: 'Elegí un servicio.' },
-    mensaje: { el: document.getElementById('mensaje'), min: 10, msg: 'El mensaje debe tener al menos 10 caracteres.' },
-  };
+/**
+ * @param {string}  selectorContenedor  Selector CSS del contenedor principal
+ * @param {number}  porVistaDesktop     Cantidad de ítems visibles en desktop (≥900px)
+ */
+function crearCarrusel(selectorContenedor, porVistaDesktop = 3) {
+  const contenedor = document.querySelector(selectorContenedor);
+  if (!contenedor) return;
 
-  const validateField = (key) => {
-    const f = fields[key];
-    if (!f.el) return true;
+  const viewport   = contenedor.querySelector('.carrusel-viewport');
+  const track      = contenedor.querySelector('.carrusel-track');
+  const items      = Array.from(track.children);
+  const btnPrev    = contenedor.querySelector('.carrusel-prev');
+  const btnNext    = contenedor.querySelector('.carrusel-next');
+  const puntosWrap = contenedor.querySelector('.carrusel-puntos');
 
-    const val = f.el.value.trim();
-    const group = f.el.closest('.form-group');
-    let valid = true;
+  // Debe coincidir con --carrusel-gap en CSS (20px)
+  const GAP = 20;
 
-    if (f.required && !val) valid = false;
-    if (f.min && val.length < f.min) valid = false;
-    if (f.regex && val && !f.regex.test(val)) valid = false;
+  let indice = 0; // Índice del primer ítem visible
 
-    if (!valid) {
-      group.classList.add('has-error');
-      f.el.classList.add('error');
-    } else {
-      group.classList.remove('has-error');
-      f.el.classList.remove('error');
-    }
+  /* --- Helpers --- */
 
-    return valid;
-  };
+  /** Cuántos ítems se muestran según el ancho de pantalla */
+  function porVista() {
+    if (window.innerWidth < 600) return 1;
+    if (window.innerWidth < 900) return 2;
+    return porVistaDesktop;
+  }
 
-  // Live validation on blur
-  Object.keys(fields).forEach(key => {
-    const el = fields[key].el;
-    if (el) {
-      el.addEventListener('blur', () => validateField(key));
-      el.addEventListener('input', () => {
-        if (el.classList.contains('error')) validateField(key);
+  /** Cuántas "páginas" tiene el carrusel */
+  function totalPaginas() {
+    return Math.ceil(items.length / porVista());
+  }
+
+  /** Índice máximo permitido (para no quedar en blanco al final) */
+  function indiceMax() {
+    return Math.max(0, items.length - porVista());
+  }
+
+  /** Ancho de cada ítem según el viewport visible */
+  function anchoItem() {
+    const anchoViewport = viewport.offsetWidth;
+    const n = porVista();
+    return (anchoViewport - GAP * (n - 1)) / n;
+  }
+
+  /* --- Renderizado --- */
+
+  /** Aplica el desplazamiento al track */
+  function deslizar() {
+    const offset = indice * (anchoItem() + GAP);
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  /** Actualiza estado visual de flechas y puntos */
+  function actualizarControles() {
+    // Flechas
+    if (btnPrev) btnPrev.disabled = indice === 0;
+    if (btnNext) btnNext.disabled = indice >= indiceMax();
+
+    // Puntos: marcamos el correspondiente a la página actual
+    if (puntosWrap) {
+      const paginaActual = Math.floor(indice / porVista());
+      puntosWrap.querySelectorAll('.carrusel-punto').forEach((punto, i) => {
+        punto.classList.toggle('activo', i === paginaActual);
       });
+    }
+  }
+
+  /** Recalcula tamaños y actualiza todo (se llama en init y en resize) */
+  function actualizar() {
+    const ancho = anchoItem();
+
+    // Asigna el ancho calculado a cada ítem
+    items.forEach(item => {
+      item.style.width    = `${ancho}px`;
+      item.style.flexShrink = '0';
+    });
+
+    // Ajusta el gap del track  JS (refuerza lo del CSS)
+    track.style.gap = `${GAP}px`;
+
+    // Clampea el índice por si cambió la cantidad de ítems por vista
+    indice = Math.min(indice, indiceMax());
+
+    crearPuntos(); // Recrea puntos porque puede cambiar el total de páginas
+    deslizar();
+    actualizarControles();
+  }
+
+  /** Crea o recrea los botones de puntos de navegación */
+  function crearPuntos() {
+    if (!puntosWrap) return;
+    puntosWrap.innerHTML = '';
+
+    const paginas = totalPaginas();
+
+    for (let i = 0; i < paginas; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'carrusel-punto';
+      btn.setAttribute('aria-label', `Ir a la página ${i + 1} de ${paginas}`);
+
+      btn.addEventListener('click', () => {
+        // Cada punto lleva al primer ítem de esa "página"
+        indice = Math.min(i * porVista(), indiceMax());
+        deslizar();
+        actualizarControles();
+      });
+
+      puntosWrap.appendChild(btn);
+    }
+  }
+
+  /* --- Eventos de flechas --- */
+
+  btnPrev?.addEventListener('click', () => {
+    if (indice > 0) {
+      indice--;
+      deslizar();
+      actualizarControles();
     }
   });
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  btnNext?.addEventListener('click', () => {
+    if (indice < indiceMax()) {
+      indice++;
+      deslizar();
+      actualizarControles();
+    }
+  });
 
-    let allValid = true;
-    Object.keys(fields).forEach(key => {
-      if (!validateField(key)) allValid = false;
+  /* --- Soporte táctil (swipe) --- */
+  let inicioToque = 0;
+
+  viewport.addEventListener('touchstart', e => {
+    inicioToque = e.touches[0].clientX;
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', e => {
+    const diferencia = inicioToque - e.changedTouches[0].clientX;
+    const umbral = 40; // píxeles mínimos para considerar swipe
+
+    if (Math.abs(diferencia) >= umbral) {
+      if (diferencia > 0 && indice < indiceMax()) {
+        // Swipe hacia la izquierda → siguiente
+        indice++;
+      } else if (diferencia < 0 && indice > 0) {
+        // Swipe hacia la derecha → anterior
+        indice--;
+      }
+      deslizar();
+      actualizarControles();
+    }
+  }, { passive: true });
+
+  /* --- Resize: reinicia al inicio y recalcula --- */
+  let timerResize;
+  window.addEventListener('resize', () => {
+    clearTimeout(timerResize);
+    timerResize = setTimeout(() => {
+      indice = 0;
+      actualizar();
+    }, 200);
+  });
+
+  /* --- Inicialización --- */
+  actualizar();
+}
+
+/* ============================================================
+   INICIALIZAR CARRUSELES
+   Viajes: 3 ítems en desktop | Galería: 3 ítems en desktop
+   ============================================================ */
+crearCarrusel('#carrusel-viajes',  3);
+crearCarrusel('#carrusel-galeria', 3);
+
+/* ============================================================
+   LIGHTBOX DE GALERÍA — abre la imagen ampliada al hacer clic
+   ============================================================ */
+const itemsGaleria = document.querySelectorAll('#carrusel-galeria .galeria-item');
+
+if (itemsGaleria.length) {
+  // Crear el lightbox en el DOM
+  const lightbox    = document.createElement('div');
+  lightbox.id       = 'lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Imagen ampliada');
+  lightbox.style.cssText = `
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.96);
+    display: none; align-items: center; justify-content: center;
+    cursor: zoom-out;
+  `;
+
+  const imgLightbox = document.createElement('img');
+  imgLightbox.style.cssText = `
+    max-width: 90vw; max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 0 60px rgba(255,187,0,0.15);
+    object-fit: contain;
+  `;
+
+  const btnCerrar = document.createElement('button');
+  btnCerrar.innerHTML = '&times;';
+  btnCerrar.setAttribute('aria-label', 'Cerrar');
+  btnCerrar.style.cssText = `
+    position: absolute; top: 1.5rem; right: 2rem;
+    background: none; border: none;
+    font-size: 2.8rem; color: #fff; cursor: pointer;
+    line-height: 1; opacity: 0.65; transition: opacity 0.2s;
+  `;
+  btnCerrar.addEventListener('mouseenter', () => btnCerrar.style.opacity = '1');
+  btnCerrar.addEventListener('mouseleave', () => btnCerrar.style.opacity = '0.65');
+
+  lightbox.appendChild(imgLightbox);
+  lightbox.appendChild(btnCerrar);
+  document.body.appendChild(lightbox);
+
+  /** Abre el lightbox con la imagen dada */
+  function abrirLightbox(src, alt) {
+    imgLightbox.src = src;
+    imgLightbox.alt = alt || '';
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  /** Cierra el lightbox */
+  function cerrarLightbox() {
+    lightbox.style.display = 'none';
+    imgLightbox.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // Clic en cada ítem de galería
+  itemsGaleria.forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      if (img) abrirLightbox(img.src, img.alt);
     });
+  });
 
-    if (!allValid) return;
+  // Clic en el fondo o en el botón de cierre
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) cerrarLightbox(); });
+  btnCerrar.addEventListener('click', cerrarLightbox);
 
-    // Show success
-    contactForm.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-
-    // Optional: redirect to WhatsApp with pre-filled message
-    const nombre  = fields.nombre.el.value.trim();
-    const servicio = fields.servicio.el.value;
-    const mensaje  = fields.mensaje.el.value.trim();
-
-    const waText = encodeURIComponent(
-      `Hola! Soy ${nombre}. Quiero consultar sobre: ${servicio}.\n${mensaje}`
-    );
-
-    setTimeout(() => {
-      window.open(`https://wa.me/5491150000000?text=${waText}`, '_blank');
-    }, 1500);
+  // Tecla Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') cerrarLightbox();
   });
 }
 
-/* ---- Neon hover glow on cards ---- */
-document.querySelectorAll('.producto-card, .sucursal-card').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
+/* ============================================================
+   EFECTO NEON en tarjetas al mover el mouse
+   ============================================================ */
+document.querySelectorAll('.producto-card, .sucursal-card').forEach(tarjeta => {
+  tarjeta.addEventListener('mousemove', e => {
+    const rect = tarjeta.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width)  * 100;
     const y = ((e.clientY - rect.top)  / rect.height) * 100;
-    card.style.setProperty('--mx', `${x}%`);
-    card.style.setProperty('--my', `${y}%`);
+    tarjeta.style.setProperty('--mx', `${x}%`);
+    tarjeta.style.setProperty('--my', `${y}%`);
   });
 });
 
-/* ---- Year in footer ---- */
+/* ============================================================
+   AÑO ACTUAL en el footer
+   ============================================================ */
 document.querySelectorAll('.current-year').forEach(el => {
   el.textContent = new Date().getFullYear();
 });
 
+/* ============================================================
+   FORMULARIO DE CONTACTO (contacto.html)
+   Validación de campos antes de enviar
+   ============================================================ */
+const formularioContacto = document.getElementById('contactForm');
 
-// ---  VIAJESS CARRUSEL AUTOMÁTICO ---
-const track = document.querySelector('.carrusel-track');
-let isPaused = false;
+if (formularioContacto) {
+  const campos = {
+    nombre:   { el: document.getElementById('nombre'),   min: 2,   msg: 'Ingresá tu nombre completo.' },
+    email:    { el: document.getElementById('email'),    regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg: 'Email inválido.' },
+    telefono: { el: document.getElementById('telefono'), regex: /^[\d\s\+\-]{7,}$/, msg: 'Ingresá un teléfono válido.' },
+    servicio: { el: document.getElementById('servicio'), required: true, msg: 'Elegí un servicio.' },
+    mensaje:  { el: document.getElementById('mensaje'),  min: 10,  msg: 'El mensaje debe tener al menos 10 caracteres.' },
+  };
 
-function startAutoScroll() {
-    setInterval(() => {
-        if (!isPaused && track) {
-            
-            if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 10) {
-                
-                track.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                const step = track.querySelector('.viaje-item').offsetWidth + 20;
-                track.scrollBy({ left: step, behavior: 'smooth' });
-            }
-        }
-    }, 3000); 
+  function validarCampo(clave) {
+    const campo = campos[clave];
+    if (!campo.el) return true;
+
+    const valor = campo.el.value.trim();
+    const grupo = campo.el.closest('.form-group');
+    let esValido = true;
+
+    if (campo.required && !valor)           esValido = false;
+    if (campo.min && valor.length < campo.min) esValido = false;
+    if (campo.regex && valor && !campo.regex.test(valor)) esValido = false;
+
+    if (grupo) {
+      grupo.classList.toggle('has-error', !esValido);
+    }
+    campo.el.classList.toggle('error', !esValido);
+    return esValido;
+  }
+
+  // Validación en tiempo real al salir de cada campo
+  Object.keys(campos).forEach(clave => {
+    const el = campos[clave].el;
+    if (el) {
+      el.addEventListener('blur',  () => validarCampo(clave));
+      el.addEventListener('input', () => { if (el.classList.contains('error')) validarCampo(clave); });
+    }
+  });
+
+  formularioContacto.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const todoValido = Object.keys(campos).map(validarCampo).every(Boolean);
+    if (!todoValido) return;
+
+    // Oculta el formulario y muestra mensaje de éxito
+    formularioContacto.style.display = 'none';
+    const exito = document.getElementById('formSuccess');
+    if (exito) exito.style.display = 'block';
+
+    // Redirige a WhatsApp con el mensaje pre-armado
+    const nombre   = campos.nombre.el.value.trim();
+    const servicio = campos.servicio.el.value;
+    const mensaje  = campos.mensaje.el.value.trim();
+    const textoWA  = encodeURIComponent(`Hola! Soy ${nombre}. Quiero consultar sobre: ${servicio}.\n${mensaje}`);
+
+    setTimeout(() => {
+      window.open(`https://wa.me/5491136596097?text=${textoWA}`, '_blank');
+    }, 1500);
+  });
 }
-
-const revealSection = () => {
-    const reveals = document.querySelectorAll('.reveal');
-    
-    reveals.forEach(reveal => {
-        const windowHeight = window.innerHeight;
-        const revealTop = reveal.getBoundingClientRect().top;
-        const revealPoint = 150;
-
-        if (revealTop < windowHeight - revealPoint) {
-            reveal.classList.add('active');
-        }
-    });
-};
-
-window.addEventListener('scroll', revealSection);
-window.addEventListener('load', () => {
-    startAutoScroll();
-    revealSection();
-});
-
-
-
-
