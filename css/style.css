@@ -1144,7 +1144,7 @@ section {
 
 .sucursales-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -1557,8 +1557,7 @@ section {
   .academia-grid      { grid-template-columns: 1fr; }
   .academia-img-wrap  { order: -1; }
   .academia-badge     { width: 70px; height: 70px; font-size: 0.8rem; }
-
-  .sucursales-grid  { grid-template-columns: 1fr; }
+  .sucursales-grid {grid-template-columns: 1fr;}
   .contact-grid     { grid-template-columns: 1fr; }
   .footer-grid      { grid-template-columns: 1fr 1fr; }
 }
