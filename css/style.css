@@ -197,11 +197,10 @@ ul {
   overflow: hidden;
 }
 
-/* Fondo: cambiar imagen aquí si es necesario */
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/logos/fondohero.jpg');
+  background-image: url('../images/logos/Fondohero.webp');
   background-size: cover;
   background-position: center top;
   filter: brightness(0.35) saturate(1.2);
@@ -211,17 +210,15 @@ ul {
 @media (max-width: 600px) {
   .hero-bg {
     background-position: 50% center; 
-    background-image: url('../images/logos/fondohero1.jpg');
+    background-image: url('../images/logos/Fondohero1.webp');
     
-    /* Si sentís que el barbero queda muy chico, 
-       podés compensar con un pelín de scale */
     transform: scale(1); 
   }
 }
 
 @media (max-width: 600px) {
   .hero-bg {
-    /* Mantenemos la foto grande y abajo */
+  
     background-size: 180% !important;
     background-position: center 25% !important; 
     background-repeat: no-repeat !important;
