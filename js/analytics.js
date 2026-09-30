@@ -19,7 +19,7 @@
 (function () {
   'use strict';
 
-  var GA4_ID = '';   // ej: 'G-AB12CD34EF'
+  var GA4_ID = 'G-0SPDDTK2P1';   // ej: 'G-AB12CD34EF'
 
   if (!/^G-[A-Z0-9]+$/.test(GA4_ID)) return;
 

@@ -17,7 +17,7 @@
 window.BH = window.BH || { models: {}, views: {}, controllers: {} };
 
 BH.models.Analytics = {
-  measurementId: '',   // ej: 'G-AB12CD34EF'
+  measurementId: 'G-0SPDDTK2P1',   // ej: 'G-AB12CD34EF'
 
   enabled() { return /^G-[A-Z0-9]+$/.test(this.measurementId); }
 };
