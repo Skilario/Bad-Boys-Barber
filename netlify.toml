@@ -1,0 +1,42 @@
+# ============================================================
+#  Netlify — Bad Boys Barber (+ Barber Host en /barber-host/)
+#  Sitio estático: no hay build, se publica la carpeta tal cual.
+# ============================================================
+[build]
+  publish = "."
+
+# Seguridad básica para todas las páginas.
+# Referrer-Policy es importante: YouTube la necesita para reproducir
+# los videos dentro de la página (sin esto puede tirar "Error 153").
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Tipografías: no cambian nunca → caché de 1 año (carga más rápida al volver)
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/barber-host/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Imágenes y videos: 7 días (si cambiás una foto con el mismo nombre,
+# a más tardar en una semana todos ven la nueva)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+[[headers]]
+  for = "/barber-host/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+[[headers]]
+  for = "/barber-host/assets/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"

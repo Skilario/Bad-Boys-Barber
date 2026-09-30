@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
    <url>
-      <loc>https://badboys.com.ar/</loc>
+      <loc>https://badboysbarber.com.ar/</loc>
+      <lastmod>2026-09-30</lastmod>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/og-badboys.jpg</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/Sucursales/Sucursal2.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/Sucursales/galeria.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/Sucursales/Insumos.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/Academia/Academia-900.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/Esencia/barbero-mundo.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/Cortes/Corte1.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/Cortes/Rulos.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/Cortes/Global.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/images/Cortes/IMG_5696.webp</image:loc></image:image>
+   </url>
+   <url>
+      <loc>https://badboysbarber.com.ar/barber-host/</loc>
+      <lastmod>2026-09-30</lastmod>
+      <image:image><image:loc>https://badboysbarber.com.ar/barber-host/assets/img/og-barber-host.jpg</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/barber-host/assets/img/barberhost.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/barber-host/assets/img/eventos/liga-de-barberos.webp</image:loc></image:image>
+      <image:image><image:loc>https://badboysbarber.com.ar/barber-host/assets/img/eventos/barber-vs-barber-8.webp</image:loc></image:image>
    </url>
 </urlset>

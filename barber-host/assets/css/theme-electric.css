@@ -1,0 +1,29 @@
+/* ==========================================================
+   Barber Host · Tema: versión minimalista con acentos eléctricos (neón, glow)
+   ========================================================== */
+
+/* Más aire, menos ruido */
+body::before{display:none}
+.eyebrow .n{display:none}
+section{padding-block:clamp(80px,12vw,160px)}
+.sec-head p{font-size:16px}
+/* tarjetas -> líneas limpias */
+.svc{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:26px 0 8px}
+.svc:hover{transform:none;border-color:var(--yellow)}
+.services{gap:8px 40px}
+.pack,.path{background:transparent}
+.pillar{min-height:220px}
+.pillar p,.svc p,.sci p{font-size:14px}
+.steps span{padding:8px 12px}
+/* electricidad */
+.neon{animation:sheen 7s linear infinite,flickerOn 1.8s steps(1) .5s both}
+.hero .mic{filter:drop-shadow(0 0 10px rgba(255,187,0,.8));animation:flickerOn 1.8s steps(1) .7s both}
+.page-head + section .sec-head .eyebrow,.page-head + .phrase + section .sec-head .eyebrow{display:none}
+@keyframes flickerOn{0%{opacity:.15}8%{opacity:1}12%{opacity:.25}18%{opacity:1}26%{opacity:.4}30%,100%{opacity:1}}
+.zap{text-shadow:0 0 24px rgba(255,187,0,.45),0 0 70px rgba(255,187,0,.2);animation:hum 4s ease-in-out infinite}
+@keyframes hum{0%,100%{text-shadow:0 0 24px rgba(255,187,0,.45),0 0 70px rgba(255,187,0,.2)}50%{text-shadow:0 0 34px rgba(255,187,0,.7),0 0 110px rgba(255,187,0,.3)}}
+.btn.solid{box-shadow:0 0 0 rgba(255,187,0,0);transition:transform .25s var(--ease),color .35s,box-shadow .4s}
+.btn.solid:hover{box-shadow:0 0 28px rgba(255,187,0,.45)}
+.progress{box-shadow:0 0 12px var(--yellow)}
+.menu a[aria-current="page"]::after{box-shadow:0 0 10px var(--yellow)}
+.page-head h1 .zap-dot{color:var(--yellow)}

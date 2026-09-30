@@ -452,3 +452,26 @@ if (formularioContacto) {
     }, 1500);
   });
 }
+
+/* ============================================================
+   HERO — luz de neón que sigue al mouse (como en Barber Host)
+   ============================================================ */
+(() => {
+  const hero = document.getElementById('hero');
+  const spot = hero && hero.querySelector('.hero-spot');
+  if (!spot || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  let x = 0, y = 0, pendiente = false;
+  hero.addEventListener('pointermove', e => {
+    const r = hero.getBoundingClientRect();
+    x = e.clientX - r.left;
+    y = e.clientY - r.top;
+    if (pendiente) return;
+    pendiente = true;
+    requestAnimationFrame(() => {
+      spot.style.setProperty('--mx', x + 'px');
+      spot.style.setProperty('--my', y + 'px');
+      pendiente = false;
+    });
+  }, { passive: true });
+})();

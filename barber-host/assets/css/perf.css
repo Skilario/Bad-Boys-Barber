@@ -1,0 +1,12 @@
+/* ==========================================================
+   Barber Host · Ajustes de velocidad (se carga último)
+   ========================================================== */
+
+/* Primera carga: la sección inicial aparece al toque, sin la animación de entrada.
+   Esa animación arrancaba casi invisible y retrasaba el LCP (lo que mide Google).
+   El router marca con .no-anim solo la primera sección que muestra; las
+   siguientes navegaciones mantienen la animación. */
+.view.no-anim{animation:none}
+
+/* El nombre ahora vive dentro del <h1> (SEO): que no herede la escala gigante del título */
+.hero h1 .name{display:flex}
