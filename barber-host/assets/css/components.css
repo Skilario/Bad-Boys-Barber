@@ -1,0 +1,41 @@
+/* ==========================================================
+   Barber Host · Componentes: barra de progreso, navegación superior, botones y placeholders
+   ========================================================== */
+
+/* barra de progreso */
+.progress{position:fixed;left:0;top:0;height:2px;width:100%;background:var(--yellow);transform-origin:left;transform:scaleX(0);z-index:70}
+
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb,var(--ink) 74%,transparent);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:34px;height:34px;flex:none}
+.logo b{font:400 20px/1 var(--f-display);letter-spacing:.06em;display:block}
+.logo i{font:400 13px/1 var(--f-accent);color:var(--gold);display:block;margin-top:3px}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);position:relative;transition:color .3s}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--yellow);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease-io)}
+.nav ul a:hover,.nav ul a[aria-current="page"]{color:var(--bone)}
+.nav ul a:hover::after,.nav ul a[aria-current="page"]::after{transform:scaleX(1);transform-origin:left}
+@media (max-width:900px){.nav ul.menu{display:none}}
+
+.btn{--x:0px;--y:0px;display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;border:1px solid var(--yellow);font:700 13px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;transform:translate(var(--x),var(--y));transition:transform .25s var(--ease),color .35s;background:transparent;color:var(--yellow)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--yellow);z-index:-1;transform:translateY(101%);transition:transform .45s var(--ease-io)}
+.btn:hover{color:var(--ink)}
+.btn:hover::before{transform:none}
+.btn.solid{background:var(--yellow);color:var(--ink)}
+.btn.solid::before{background:var(--bone)}
+.btn .arr{transition:transform .35s}
+.btn:hover .arr{transform:translateX(4px)}
+.btn.sm{padding:11px 18px;font-size:11px}
+
+/* foto placeholder */
+.ph{position:relative;overflow:hidden;background:var(--ink-2);border:1px solid var(--line)}
+.ph::before{content:"";position:absolute;inset:-20%;background:
+  radial-gradient(circle at 60% 35%,rgba(255,187,0,.20),transparent 42%),
+  radial-gradient(circle at 25% 80%,rgba(201,162,74,.16),transparent 40%),
+  repeating-linear-gradient(135deg,transparent 0 18px,rgba(255,187,0,.04) 18px 19px);
+  transition:transform 1.4s var(--ease)}
+.ph:hover::before{transform:scale(1.1) rotate(2deg)}
+.ph .cap{position:absolute;left:16px;right:16px;bottom:14px;font:500 11px/1.4 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.ph .cap b{display:block;color:var(--bone);font:400 20px/1.05 var(--f-display);letter-spacing:.02em;margin-bottom:4px;text-transform:uppercase}

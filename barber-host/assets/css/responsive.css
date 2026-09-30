@@ -1,0 +1,219 @@
+/* ==========================================================
+   Barber Host · Escala tipográfica y ajustes finos para celular (mobile first)
+   ========================================================== */
+
+/* Escala tipográfica */
+section{padding-block:clamp(64px,9vw,128px)}
+.hero .name{font-size:clamp(28px,4.6vw,68px)}
+.hero h1{font-size:clamp(60px,11vw,156px)}
+.hero .tag{font-size:clamp(19px,2vw,28px)}
+.statement{padding-block:clamp(48px,7vw,96px)}
+.statement p{font-size:clamp(34px,5.6vw,84px)}
+.story h2{font-size:clamp(42px,6vw,96px)}
+.sec-head h2{font-size:clamp(34px,5vw,72px)}
+.big3{font-size:clamp(30px,4.6vw,66px)}
+.after{font-size:clamp(21px,2.4vw,34px)}
+.page-head h1{font-size:clamp(42px,7.5vw,104px)}
+.page-head .lead{font-size:16px}
+.next b{font-size:clamp(38px,6.5vw,96px)}
+.why .claim{font-size:clamp(32px,4.8vw,72px)}
+.know li{font-size:clamp(21px,2.9vw,40px)}
+.know li.closing{font-size:clamp(20px,2.4vw,34px)}
+.spark span{font-size:clamp(32px,5.2vw,78px)}
+.final h2{font-size:clamp(40px,6.6vw,100px)}
+.final .sig b{font-size:clamp(26px,3.4vw,44px)}
+.contact h2{font-size:clamp(32px,4.2vw,58px)}
+.custom h3{font-size:clamp(30px,3.6vw,50px)}
+.custom .lead{font-size:clamp(19px,2vw,26px)}
+.tl h3{font-size:clamp(26px,2.8vw,40px)}
+.ev h3{font-size:clamp(26px,2.6vw,34px)}
+.path h3{font-size:clamp(28px,2.6vw,38px)}
+.pillar h3{font-size:clamp(24px,2.2vw,32px)}
+.svc h3{font-size:22px}
+.sci h3{font-size:24px}
+.flow h4{font-size:22px}
+.sub-head h3{font-size:clamp(28px,3.2vw,44px)}
+#mediakit h2{font-size:clamp(32px,4.4vw,62px)!important}
+.kit .folder b{font-size:clamp(34px,4.4vw,58px)}
+.decade b{font-size:clamp(50px,6vw,80px)}
+.yt h4{font-size:clamp(22px,2.2vw,30px)}
+.value .yes{font-size:clamp(22px,2.4vw,32px)}
+
+/* ---- celular: pulido fino ---- */
+@media (max-width:560px){
+  :root{--gutter:18px}
+  section{padding-block:56px}
+  .wrap{padding-inline:var(--gutter)}
+  .nav .wrap{padding-block:10px;gap:12px}
+  /* hero */
+  .hero{min-height:calc(100svh - 60px);padding-block:24px 28px}
+  .hero .name{font-size:clamp(26px,8vw,34px);margin-bottom:6px}
+  .hero .name::before{width:22px;height:2px}
+  .hero h1{font-size:clamp(58px,19vw,84px)}
+  .hero .row2{gap:18px;margin-top:14px}
+  .hero .tag{font-size:19px}
+  .hero .ctas{display:grid;grid-template-columns:1fr;gap:10px}
+  .hero .ctas .btn{justify-content:center;width:100%}
+  .scroll-hint{display:none}
+  /* accesos rápidos */
+  .quick{padding-block:22px 26px}
+  .quick-grid{gap:8px}
+  .qk{padding:12px;border-radius:12px}
+  /* textos grandes */
+  .statement{padding-block:44px}
+  .statement p{font-size:clamp(32px,10vw,42px)}
+  .statement small{font-size:15px;margin-top:16px}
+  .story{padding-block:48px}
+  .story-card{max-width:280px}
+  .story h2{font-size:clamp(40px,12vw,54px);margin-block:12px 16px}
+  .story p.body{font-size:16px;margin-bottom:22px}
+  .story .btn{width:100%;justify-content:center}
+  .sec-head{margin-bottom:28px;gap:14px}
+  .sec-head h2{font-size:clamp(32px,10vw,44px)}
+  .sec-head p{font-size:15px}
+  /* pilares en 2 columnas compactas */
+  .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pillar{min-height:0;padding:18px 14px;gap:18px}
+  .pillar svg{width:30px;height:30px}
+  .pillar h3{font-size:20px;margin-bottom:6px}
+  .pillar p{font-size:13px}
+  /* problema */
+  .big3{font-size:clamp(28px,8.6vw,38px)}
+  .after{font-size:21px}
+  .flows{margin-top:32px}
+  .flow{padding-block:16px}
+  .steps span{font-size:10px;padding:7px 10px}
+  .value{margin-top:28px}
+  /* servicios */
+  .svc{padding-top:20px}
+  .custom{padding:26px 22px;gap:14px}
+  .custom h3{font-size:32px}
+  .custom::after{display:none}
+  /* por qué + energía */
+  .why .claim{font-size:clamp(30px,9vw,40px)}
+  .know{margin-top:28px;padding-top:16px}
+  .know li{font-size:clamp(20px,6vw,26px)}
+  .know li.lit{transform:translateX(6px)}
+  .know li.closing{font-size:20px}
+  .sci div{padding:20px 0 22px}
+  .spark{margin-top:44px}
+  .spark span{font-size:clamp(28px,8.6vw,38px)}
+  .wave{height:90px}
+  /* experiencia */
+  .exp{gap:28px}
+  .tl{padding-left:28px}
+  .tl li{padding-bottom:28px}
+  .tl li::before{left:-25px}
+  .tl h3{font-size:26px;margin-block:8px 6px}
+  .decade{grid-template-columns:1fr;gap:8px;padding:22px}
+  .decade b{font-size:56px}
+  .decade p{font-size:16px}
+  /* eventos y videos */
+  .ev .body{padding:18px}
+  .sub-head{margin-block:44px 18px}
+  .yt .info{padding:18px;gap:10px}
+  .yt .ytbtn{width:68px;height:48px;margin:-24px 0 0 -34px}
+  .reels{gap:8px}
+  .reel{border-radius:10px}
+  .reel .num{font-size:30px;left:10px;top:8px}
+  .reel .badge-ig{width:24px;height:24px;right:8px;top:8px}
+  .reel .play{width:46px;height:46px;margin:-23px 0 0 -23px}
+  .reel .foot{padding:10px}
+  .reel .foot .meta b{font-size:15px}
+  .reel .foot .go{display:none}
+  .more .btn{width:100%;justify-content:center}
+  /* contratar */
+  .path{min-height:0;padding:24px 20px;gap:12px}
+  .kit{gap:24px}
+  .kit .folder{aspect-ratio:16/9}
+  .files li{font-size:14px;padding-block:12px}
+  .kit .btn{width:100%;justify-content:center}
+  .final .inner{padding-block:96px 64px}
+  .final h2{font-size:clamp(40px,12vw,54px)}
+  .final .btn{width:100%;justify-content:center;max-width:320px}
+  .contact h2{font-size:clamp(32px,9.6vw,42px)}
+  .wa-card{padding:16px}
+  .wa-card b{font-size:22px}
+  .tabs button{padding:12px 8px;font-size:11px;letter-spacing:.04em}
+  form{gap:20px}
+  form .btn{width:100%;justify-content:center}
+  /* navegación entre secciones */
+  .page-head{padding-block:28px 6px}
+  .page-head h1{font-size:clamp(44px,14vw,60px);margin-top:12px}
+  .page-head .lead{font-size:15px}
+  .chips{margin-block:18px 14px;gap:6px}
+  .chips .lbl{width:100%;margin-bottom:2px}
+  .chip-link{padding:10px 13px;font-size:11px}
+  .page-head + section,.page-head + .phrase + section{padding-top:36px}
+  .next{padding-block:40px}
+  .next b{font-size:clamp(38px,12vw,52px)}
+  .pager>.wrap{padding-block:14px}
+  footer{padding-block:28px}
+  footer .wrap{flex-direction:column;align-items:flex-start;gap:12px}
+  .wa-float{height:52px;padding:0 13px;right:14px}
+  .pole{height:12px;background-size:79px 12px}
+}
+
+
+/* Ajustes finos */
+@media (max-width:380px){.bottombar a{font-size:9.5px;letter-spacing:-.01em;padding-inline:0}}
+.files{padding:0}
+.reel .foot .meta b{display:none}
+.next .eyebrow{flex-wrap:wrap;line-height:1.5}
+.next b{flex-wrap:wrap}
+.wa-float{transition:gap .4s var(--ease),padding .4s var(--ease),transform .5s var(--ease),opacity .4s}
+.wa-float.away{transform:translateY(20px) scale(.8);opacity:0;pointer-events:none}
+@media (max-width:560px){
+  .hero{min-height:calc(100svh - 60px - 72px - env(safe-area-inset-bottom,0px));justify-content:flex-end}
+  .hero-photo{height:58%}
+  .qk b{font-size:15px}
+  .qk span{font-size:11px}
+  .pillar h3{font-size:17px}
+  .page-head h1{font-size:clamp(34px,11vw,52px)}
+  .next b{font-size:clamp(32px,10vw,46px)}
+  .tabs{display:grid;grid-template-columns:repeat(3,1fr);border-radius:14px;gap:4px;padding:4px}
+  .tabs .pill{top:4px;bottom:4px;border-radius:10px}
+  .tabs button{padding:12px 4px;font-size:10px;border-radius:10px;line-height:1.2}
+  .pager.last .count{display:none}
+  .pager.last>.wrap{justify-content:space-between}
+  .pager .prev{font-size:11px;padding:10px 12px}
+}
+
+
+/* ==========================================================
+   Ajustes: hero en celular, marquesina liviana, "un evento puede tener" que se ilumina
+   ========================================================== */
+
+/* Frases que cruzan: animación CSS pura (no depende del scroll, no traba) */
+.phrase{padding-block:clamp(18px,2.4vw,28px)}
+.phrase .t{font-size:clamp(28px,4.2vw,60px);gap:0;width:max-content;animation:marquee 38s linear infinite;will-change:transform}
+.phrase .t.rev{animation-direction:reverse}
+.phrase .seq{display:flex;gap:.5em;padding-right:.5em;align-items:center;flex:none}
+.phrase .t .o{-webkit-text-stroke:1px var(--yellow)}
+@keyframes marquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+/* "Un evento puede tener…" se prende línea por línea al bajar */
+.big3 span{color:#34312a;transition:color .6s var(--ease),text-shadow .6s var(--ease)}
+.big3 .dim:not(.lit),.big3 .k:not(.lit){color:#34312a}
+.big3 span.lit{color:var(--bone)}
+.big3 .dim.lit{color:var(--mute)}
+.big3 .k.lit{color:var(--yellow);text-shadow:0 0 24px rgba(255,187,0,.45)}
+
+/* Cursivas fuera: textos que antes eran serif itálica */
+.hero .tag{font-weight:500;letter-spacing:-.01em}
+.after{font-weight:500}
+.custom .lead{font-weight:700}
+
+/* Hero en celular: la foto va arriba (recorte propio) y el título abajo, sin taparle la cara */
+@media (max-width:560px){
+  .hero{display:flex;flex-direction:column;justify-content:flex-start;min-height:0;padding-block:0 28px}
+  .hero-photo{position:relative;inset:auto;width:auto;height:min(60svh,520px);margin-inline:0}
+  .hero-photo picture,.hero-photo .hero-img{display:block;width:100%;height:100%}
+  .hero-photo .hero-img{object-fit:cover;object-position:50% 35%;opacity:1;animation:none;-webkit-mask-image:none;mask-image:none}
+  .hero-photo::after{background:linear-gradient(180deg,rgba(10,10,8,.25) 0%,transparent 18%,transparent 62%,var(--ink) 100%)}
+  .hero .wrap{margin-top:-72px}
+  .hero .spot{display:none}
+  .phrase .t{font-size:26px;animation-duration:26s}
+}
+
+@media (prefers-reduced-motion:reduce){.phrase .t{animation:none}*,*::before,*::after{animation:none!important;transition:none!important}.js .rv:not(.in){transform:none;opacity:1}.reel.extra{animation:none}}

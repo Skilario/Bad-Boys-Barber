@@ -1,0 +1,109 @@
+/* ==========================================================
+   Barber Host · Ítem "Bad Boys" (menú + barra inferior)
+   Link directo de vuelta a la web de la barbería.
+   ========================================================== */
+
+/* compu: al final del menú */
+.bb-item{position:relative}
+.nav .menu .bb-link{display:inline-flex;align-items:center;gap:6px;color:var(--yellow);text-decoration:none;transition:color .3s,text-shadow .3s}
+.menu .bb-link span{font-size:12px;transition:transform .3s var(--ease)}
+.menu .bb-link:hover{text-shadow:0 0 12px rgba(255,187,0,.6)}
+.menu .bb-link:hover span{transform:translateX(-3px)}
+
+/* celular: la vuelta a Bad Boys va en el header, arriba a la derecha */
+.bb-back{display:none}
+@media (max-width:900px){
+  .nav .bb-back{display:inline-flex;align-items:center;gap:6px;margin-left:auto;padding:8px 12px;border:1px solid var(--yellow);border-radius:999px;color:var(--yellow);text-decoration:none;font:700 10.5px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+  .nav .bb-back:active{background:rgba(255,187,0,.12)}
+}
+
+/* ============================================================
+   Barra inferior (celular): 5 secciones, "Contratar" resaltado
+   y se esconde al bajar / aparece al subir
+   ============================================================ */
+@media (max-width:900px){
+  .bottombar{grid-template-columns:repeat(5,1fr)!important;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+  body.bar-hidden .bottombar{transform:translateY(110%)}
+  .bottombar a{font-size:10px!important;letter-spacing:.01em!important}
+  .bottombar a.tab-cta{background:var(--yellow);color:var(--ink);margin-inline:3px;box-shadow:0 0 16px rgba(255,187,0,.35)}
+  .bottombar a.tab-cta[aria-current="page"]{background:var(--yellow);color:var(--ink);box-shadow:0 0 0 2px rgba(255,187,0,.35),0 0 22px rgba(255,187,0,.55)}
+  .bottombar a.tab-cta span{font-weight:700}
+}
+@media (max-width:420px){
+  .bottombar svg{width:20px;height:20px}
+}
+
+/* ============================================================
+   Botones flotantes de Instagram y WhatsApp: IDÉNTICOS a los de Bad Boys
+   (mismo tamaño, colores, íconos, sombra y animación)
+   ============================================================ */
+.ig-float,
+.wa-float {
+  position: fixed;
+  right: 2rem;
+  z-index: 999;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  gap: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  overflow: visible;
+}
+.ig-float {
+  bottom: calc(2rem + 52px + 0.9rem);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0 4px 18px rgba(214, 36, 159, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.4s;
+}
+.ig-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(214, 36, 159, 0.6); }
+.ig-float svg { width: 26px; height: 26px; fill: #fff; }
+.wa-float {
+  bottom: 2rem;
+  background: #25D366;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.4s;
+  animation: waPulse 3s ease infinite;
+}
+.wa-float::before { content: none; }
+.wa-float span { display: none; }
+.wa-float:hover { gap: 0; padding: 0; transform: scale(1.1); box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6); animation: none; }
+.wa-float svg { width: 28px; height: 28px; fill: #fff; }
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50%      { box-shadow: 0 4px 35px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.08); }
+}
+/* con la barra de secciones de abajo (celu/tablet) suben para no taparla,
+   y bajan a su lugar cuando la barra se esconde */
+@media (max-width: 900px) {
+  .ig-float, .wa-float { transition: transform 0.3s, box-shadow 0.3s, bottom 0.35s cubic-bezier(.2,.8,.2,1); }
+  .wa-float { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+  .ig-float { bottom: calc(84px + 52px + 0.9rem + env(safe-area-inset-bottom, 0px)); }
+  body.bar-hidden .wa-float { bottom: calc(2rem + env(safe-area-inset-bottom, 0px)); }
+  body.bar-hidden .ig-float { bottom: calc(2rem + 52px + 0.9rem + env(safe-area-inset-bottom, 0px)); }
+}
+/* inicio en celu: foto un poco más baja para que el botón "Contratar" entre en la primera pantalla,
+   y texto + botón dejan libre la columna de los botones flotantes */
+@media (max-width: 560px) {
+  .hero-photo { height: min(52svh, 460px); }
+  .hero .tag { padding-right: 76px; }
+  .hero .ctas { justify-items: start; }
+  .hero .ctas .btn { width: auto; }
+}
+@media (max-width: 380px) {
+  .hero .ctas .btn { padding-inline: 16px; font-size: 11px; letter-spacing: 0.06em; }
+}
+@media (max-width: 560px) {
+  .ig-float, .wa-float { right: 2rem; width: 52px; height: 52px; padding: 0; }
+}
+
+
+/* Misma barra de scroll finita que Bad Boys: así los botones flotantes quedan
+   a la misma distancia del borde de la pantalla en las dos páginas */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #ffbb00; border-radius: 99px; }

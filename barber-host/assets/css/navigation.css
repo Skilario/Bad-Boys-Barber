@@ -1,0 +1,129 @@
+/* ==========================================================
+   Barber Host · Navegación por secciones: marca, menú, vistas, encabezados, accesos rápidos, paginador y barra inferior (celular)
+   ========================================================== */
+
+/* Marca, nombre y vistas */
+.logo img{height:34px;width:auto;display:block;flex:none}
+.logo .who{display:grid;gap:3px;padding-left:12px;border-left:1px solid var(--line)}
+.logo .who b{white-space:nowrap;font:400 18px/1 var(--f-display);letter-spacing:.04em;text-transform:uppercase;color:var(--bone)}
+.logo .who i{font:400 13px/1 var(--f-accent);color:var(--gold)}
+@media (max-width:420px){.logo img{height:26px}.logo .who b{font-size:15px}}
+.menu{align-items:center}
+.menu a[aria-current="page"]{color:var(--bone)}
+.menu a[aria-current="page"]::after{transform:scaleX(1);transform-origin:left}
+.tabbar{display:none;overflow-x:auto;scrollbar-width:none;gap:6px;padding:0 var(--gutter) 12px;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.tabbar::-webkit-scrollbar{display:none}
+.tabbar a{flex:none;text-decoration:none;font:700 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding:10px 14px;border-radius:999px;border:1px solid var(--line)}
+.tabbar a[aria-current="page"]{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+@media (max-width:900px){.tabbar{display:flex}.nav-cta{display:none}}
+
+.view{display:none}
+.view.active{display:block;animation:viewIn .9s var(--ease) both}
+@keyframes viewIn{from{transform:translateY(24px)}to{transform:none}}
+.wipe{position:fixed;inset:0;z-index:80;pointer-events:none;background:var(--yellow);transform:scaleY(0);transform-origin:bottom}
+.wipe.go{animation:wipe .75s var(--ease-io)}
+@keyframes wipe{0%{transform:scaleY(0);transform-origin:bottom}45%{transform:scaleY(1);transform-origin:bottom}55%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(0);transform-origin:top}}
+
+.next{display:block;text-decoration:none;border-top:1px solid var(--line);padding-block:clamp(48px,7vw,88px);position:relative;overflow:hidden}
+.next::before{content:"";position:absolute;inset:0;background:var(--yellow);transform:translateY(101%);transition:transform .6s var(--ease-io)}
+.next .wrap{position:relative;display:grid;gap:14px}
+.next b{font:400 clamp(56px,10vw,150px)/.9 var(--f-display);text-transform:uppercase;transition:color .4s;display:flex;align-items:center;gap:.2em}
+.next .arr{display:inline-block;transition:transform .5s var(--ease)}
+.next:hover::before{transform:none}
+.next:hover b,.next:hover .eyebrow{color:var(--ink)}
+.next:hover .arr{transform:translateX(.2em)}
+
+/* nombre protagonista */
+.hero .name{font:400 clamp(40px,6.4vw,96px)/.95 var(--f-display);letter-spacing:.01em;text-transform:uppercase;margin-bottom:clamp(8px,1.4vw,18px);display:flex;flex-wrap:wrap;gap:0 .28em;align-items:baseline}
+.hero .name .first{color:var(--bone)}
+.hero .name .last{color:var(--yellow)}
+.hero .name::before{content:"";width:clamp(28px,4vw,64px);height:3px;background:var(--gold);align-self:center;margin-right:.1em}
+.hero h1{font-size:clamp(76px,14vw,210px)}
+.final .sig b{display:block;font:400 clamp(34px,5vw,64px)/1 var(--f-display);letter-spacing:.02em;color:var(--bone)}
+.final .sig{letter-spacing:0}
+
+
+/* Marca compacta y botón Bad Boys */
+.nav .wrap{gap:20px}
+.logo{gap:10px;flex:none}
+.logo img{height:28px}
+.logo .who{gap:2px;padding-left:10px}
+.logo .who b{font-size:15px}
+.logo .who i{font-size:11px}
+.menu{gap:clamp(12px,1.6vw,24px)!important}
+.menu a{white-space:nowrap}
+.tabbar .bb-link{padding:7px 16px!important;min-width:76px}
+.tabbar .bb-link img{height:18px!important}
+.bb-top{display:none!important}
+@media (max-width:900px){.bb-top{display:inline-flex!important;min-width:0;padding:6px 12px!important}.bb-top img{height:18px!important}}
+@media (max-width:1180px){.nav-cta{display:none}.menu a{font-size:11px}}
+@media (max-width:1020px) and (min-width:901px){.logo .who{display:none}}
+@media (max-width:420px){.logo img{height:24px}.logo .who b{font-size:13px}.logo .who i{font-size:10px}}
+
+
+/* Navegación intuitiva */
+/* Menú igual al de Bad Boys: sin números, activo en amarillo con línea */
+.menu{gap:clamp(16px,2.2vw,32px)!important}
+.nav .menu a{display:inline-flex;align-items:baseline;font:500 12px/1 var(--f-body);letter-spacing:.12em}
+.nav .menu a:hover,.nav .menu a[aria-current="page"]{color:var(--yellow)}
+@media (max-width:1180px){.nav .menu a{font-size:11px}}
+.view.active{animation:viewIn .55s var(--ease) both}
+@keyframes viewIn{from{opacity:.001;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.page-head{padding-block:clamp(36px,5vw,64px) clamp(8px,1.5vw,16px);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(255,187,0,.05),transparent)}
+.page-head .crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font:500 11px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.page-head .crumb a{color:var(--mute);text-decoration:none}
+.page-head .crumb a:hover{color:var(--yellow)}
+.page-head .crumb .step{margin-left:auto;color:var(--gold)}
+.page-head h1{font:400 clamp(44px,12vw,140px)/.88 var(--f-display);text-transform:uppercase;margin-top:18px;overflow-wrap:normal;word-break:keep-all}
+.page-head .lead{color:var(--mute);font-size:18px;margin-top:14px;max-width:52ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-block:26px 20px}
+.chips .lbl{font:500 11px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-right:6px}
+.chip-link{text-decoration:none;font:700 12px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:11px 16px;border-radius:999px;border:1px solid var(--line);transition:border-color .3s,color .3s,background .3s}
+.chip-link span{color:var(--yellow);margin-left:4px}
+.chip-link:hover{border-color:var(--yellow);background:rgba(255,187,0,.08)}
+.page-head + section,.page-head + .phrase + section{padding-top:clamp(48px,6vw,80px)}
+
+.quick{padding-block:clamp(28px,4vw,48px);border-bottom:1px solid var(--line)}
+.quick .eyebrow{margin-bottom:16px}
+.quick-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.qk{position:relative;display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto;column-gap:14px;row-gap:4px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--ink-2);text-decoration:none;transition:border-color .3s,transform .4s var(--ease),background .3s}
+.qk svg{grid-row:1/3;width:26px;height:26px;fill:none;stroke:var(--yellow);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.qk b{font:400 22px/1 var(--f-display);text-transform:uppercase}
+.qk span{grid-column:2;font-size:13px;color:var(--mute)}
+.qk i{grid-row:1/3;grid-column:3;font-style:normal;color:var(--yellow);transition:transform .35s var(--ease)}
+.qk:hover{border-color:var(--yellow);transform:translateY(-3px)}
+.qk:hover i{transform:translateX(4px)}
+.qk.hot{background:var(--yellow);border-color:var(--yellow)}
+.qk.hot b,.qk.hot i{color:var(--ink)}.qk.hot span{color:rgba(10,10,8,.7)}.qk.hot svg{stroke:var(--ink)}
+@media (max-width:520px){.qk{padding:14px 12px;column-gap:10px;grid-template-columns:auto minmax(0,1fr)}.qk i{display:none}.qk b{font-size:17px}.qk span{font-size:12px;line-height:1.3}.qk svg{width:22px;height:22px}}
+
+.pager>.wrap{display:flex;align-items:center;gap:16px;padding-block:18px;border-top:1px solid var(--line)}
+.pager .prev{text-decoration:none;font:700 12px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding:10px 14px;border:1px solid var(--line);border-radius:999px;transition:color .3s,border-color .3s}
+.pager .prev:hover{color:var(--bone);border-color:var(--gold)}
+.pager .count{margin-left:auto;font:500 11px/1 var(--f-mono);letter-spacing:.14em;color:var(--gold)}
+.pager.last .count{margin-inline:auto}
+.pager .next{border-top:1px solid var(--line)}
+
+/* barra inferior tipo app en celular */
+.bottombar{display:none}
+@media (max-width:560px){.hide-m{display:none}}
+@media (max-width:900px){
+  .bottombar{position:fixed;left:0;right:0;bottom:0;z-index:66;display:grid;grid-template-columns:repeat(5,1fr);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+  .bottombar a{display:grid;justify-items:center;gap:4px;padding:8px 2px;text-decoration:none;color:var(--mute);border-radius:10px;font:600 10px/1 var(--f-body);letter-spacing:.02em;min-width:0}
+  .bottombar a span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .bottombar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .bottombar a[aria-current="page"]{color:var(--yellow);background:rgba(255,187,0,.1)}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+  .wa-float{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+
+/* Header idéntico en Bad Boys y Barber Host: mismo alto, mismo fondo
+   y menú centrado en la pantalla (3 columnas: logo | menú | botón) */
+.nav{background:rgba(10,10,8,.96)}
+.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:20px;min-height:65px;padding-block:0}
+.nav .logo{justify-self:start}
+.nav .menu{justify-self:center}
+.nav .nav-cta{justify-self:end}
+@media (max-width:900px){.nav .wrap{display:flex;min-height:60px}}

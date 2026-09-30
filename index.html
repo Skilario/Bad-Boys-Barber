@@ -1,72 +1,286 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
-  <meta name="description" content="Barber Bad Boys — Más de 7 años en Freestyle, Color y Rulos. Del Cruce pal Mundo. Moreno, Buenos Aires." />
-  <title>Barber Bad Boys | Barberia Cruce Castelar</title>
-  <link rel="icon" type="image/x-icon" href="images/Logos/Favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bad Boys Barber | Barbería en Moreno · Cruce Castelar</title>
+  <meta name="description" content="Barbería en Cruce Castelar, Moreno: degradados, freestyle, claritos, globales y rulos. Más de 10 años, academia de barberos e insumos. Sacá turno online." />
+  <link rel="canonical" href="https://badboysbarber.com.ar/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0a0a08" />
+
+  <!-- Vista previa al compartir (WhatsApp, Instagram, Facebook, X) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Bad Boys Barber" />
+  <meta property="og:title" content="Bad Boys Barber | Barbería en Moreno · Cruce Castelar" />
+  <meta property="og:description" content="Degradados, freestyle, claritos, globales y rulos. Academia de barberos e insumos. Del Cruce pal Mundo ⚡" />
+  <meta property="og:url" content="https://badboysbarber.com.ar/" />
+  <meta property="og:image" content="https://badboysbarber.com.ar/assets/img/brand/og-badboys.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logo de Bad Boys Barber en neón y Ezequiel Farias señalando" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Íconos -->
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/brand/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/brand/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png" />
+
+  <!-- Tipografías propias (las mismas de Barber Host: Anton, Manrope y DM Mono) -->
+  <link rel="preload" href="assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- Fondo del inicio: se pide antes para que la primera pantalla cargue más rápido -->
+  <link rel="preload" as="image" href="assets/img/hero/fondo-hero-pc.webp" media="(min-width: 601px)" />
+  <link rel="preload" as="image" href="assets/img/hero/fondo-hero-celu.webp" media="(max-width: 600px)" />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/analytics.js" defer></script>
+
+  <!-- Datos para Google: marca, 2 barberías, tienda de insumos y academia -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BarberShop", 
-  "name": "Bad Boys Barber",
-  "url": "https://badboysbarber.com.ar",
-  "logo": "https://badboysbarber.com.ar/logo/LogoBadBoys.svg",
-  "description": "Barbería profesional, academia de barberos y venta de productos en Moreno, San Miguel y alrededores.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Moreno",
-    "addressRegion": "Buenos Aires",
-    "addressCountry": "AR"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Moreno" },
-    { "@type": "City", "name": "San Miguel" },
-    { "@type": "City", "name": "Muñiz" },
-    { "@type": "City", "name": "Bella Vista" }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Servicios de Bad Boys",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Barbería" }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://badboysbarber.com.ar/#organizacion",
+      "name": "Bad Boys Barber",
+      "alternateName": [
+        "Bad Boys Barber Shop",
+        "BadBoy's BarberShop"
+      ],
+      "url": "https://badboysbarber.com.ar/",
+      "logo": "https://badboysbarber.com.ar/assets/img/brand/apple-touch-icon.png",
+      "image": "https://badboysbarber.com.ar/assets/img/brand/og-badboys.jpg",
+      "slogan": "Del Cruce pal Mundo",
+      "foundingDate": "2018",
+      "founder": {
+        "@type": "Person",
+        "name": "Ezequiel Farias",
+        "url": "https://badboysbarber.com.ar/barber-host/"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Academia de Barbería" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Warehouse", "name": "Venta de Productos" }
+      "sameAs": [
+        "https://www.instagram.com/badboys_barber_shop/",
+        "https://www.instagram.com/barberinsumos.badboys/",
+        "https://www.instagram.com/academia.badboys/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://badboysbarber.com.ar/#web",
+      "url": "https://badboysbarber.com.ar/",
+      "name": "Bad Boys Barber",
+      "inLanguage": "es-AR",
+      "publisher": {
+        "@id": "https://badboysbarber.com.ar/#organizacion"
       }
-    ]
-  }
+    },
+    {
+      "@type": "HairSalon",
+      "@id": "https://badboysbarber.com.ar/#barberia",
+      "name": "Bad Boys Barber — Avenida",
+      "url": "https://badboysbarber.com.ar/",
+      "image": [
+        "https://badboysbarber.com.ar/assets/img/sucursales/sucursal-2.webp",
+        "https://badboysbarber.com.ar/assets/img/brand/og-badboys.jpg"
+      ],
+      "logo": "https://badboysbarber.com.ar/assets/img/brand/apple-touch-icon.png",
+      "description": "Barbería en Cruce Castelar, Moreno: degradados, freestyle, diseños, claritos, globales y rulos. Sede principal de Bad Boys Barber.",
+      "telephone": "+54 9 11 3659-6097",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Dr. Néstor Carlos Kirchner 3753",
+        "addressLocality": "Moreno",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -34.5852029,
+        "longitude": -58.7478012
+      },
+      "hasMap": "https://www.google.com/maps/place/Bad+Boys+Barber+Shop+-+Sucursal+Avenida/@-34.5852029,-58.7478012,17z",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Moreno"
+        },
+        {
+          "@type": "City",
+          "name": "San Miguel"
+        },
+        {
+          "@type": "City",
+          "name": "Muñiz"
+        },
+        {
+          "@type": "City",
+          "name": "Bella Vista"
+        }
+      ],
+      "parentOrganization": {
+        "@id": "https://badboysbarber.com.ar/#organizacion"
+      },
+      "sameAs": [
+        "https://www.instagram.com/badboys_barber_shop/"
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "https://turnito.app/c/jLAGTxzvFHmLmz",
+        "name": "Sacar turno"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de barbería",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Corte y degradado (fade)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Freestyle y diseños"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Claritos y globales (colorimetría)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Rulos y ondulaciones"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "HairSalon",
+      "@id": "https://badboysbarber.com.ar/#galeria",
+      "name": "Bad Boys Barber — Galería",
+      "url": "https://badboysbarber.com.ar/#sucursales",
+      "image": "https://badboysbarber.com.ar/assets/img/sucursales/galeria.webp",
+      "telephone": "+54 9 11 3659-6097",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Dr. Néstor Carlos Kirchner 3778",
+        "addressLocality": "Moreno",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -34.5851007,
+        "longitude": -58.7484611
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "parentOrganization": {
+        "@id": "https://badboysbarber.com.ar/#organizacion"
+      }
+    },
+    {
+      "@type": "Store",
+      "@id": "https://badboysbarber.com.ar/#insumos",
+      "name": "Bad Boys Insumos",
+      "url": "https://badboysbarber.com.ar/#insumos",
+      "description": "Insumos y productos para barberos: máquinas, afeitadoras, after shave, pomadas y accesorios.",
+      "image": "https://badboysbarber.com.ar/assets/img/sucursales/insumos.webp",
+      "telephone": "+54 9 11 2817-9235",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. del Libertador 6107 (Feria de las Flores)",
+        "addressLocality": "Moreno",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -34.5989164,
+        "longitude": -58.7570852
+      },
+      "sameAs": [
+        "https://www.instagram.com/barberinsumos.badboys/"
+      ],
+      "parentOrganization": {
+        "@id": "https://badboysbarber.com.ar/#organizacion"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://badboysbarber.com.ar/#academia",
+      "name": "Curso de barbería — Academia Bad Boys",
+      "description": "Curso de barbería en Cruce Castelar, Moreno: técnicas de corte y degradado, color y rulos, freestyle urbano y gestión de clientela.",
+      "inLanguage": "es",
+      "provider": {
+        "@id": "https://badboysbarber.com.ar/#organizacion"
+      },
+      "sameAs": "https://www.instagram.com/academia.badboys/"
+    }
+  ]
 }
 </script>
-        </script>
 </head>
+<body>
   <!-- ===== NAVBAR ===== -->
   <nav id="navbar">
     <a href="index.html">
-      <img src="images/Logos/LogoBadBoys.svg" alt="Barber Bad Boys" class="nav-logo">
+      <img src="assets/img/brand/logo-badboys.webp" width="420" height="116" alt="Bad Boys Barber — Inicio" class="nav-logo">
     </a>
 
     <ul class="nav-links">
-      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#hero" class="active">Inicio</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#viajes">Viajes</a></li>
       <li><a href="#galeria">Diseños</a></li>
       <li><a href="#insumos">Insumos</a></li>
       <li><a href="#academia">Academia</a></li>
       <li><a href="#sucursales">Sucursales</a></li>
+      <li><a href="barber-host/index.html" class="nav-bh">Barber Host</a></li>
     </ul>
+
+    <a class="nav-cta" href="https://turnito.app/c/jLAGTxzvFHmLmz" target="_blank" rel="noopener">Sacar turno <span aria-hidden="true">→</span></a>
 
     <button class="hamburger" aria-label="Abrir menú">
       <span></span><span></span><span></span>
@@ -82,6 +296,7 @@
     <a href="#insumos">Insumos</a>
     <a href="#academia">Academia</a>
     <a href="#sucursales">Sucursales</a>
+    <a href="barber-host/index.html" class="nav-bh">Barber Host</a>
   </div>
 
   <!-- ===== HERO ===== -->
@@ -89,29 +304,36 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-scanline"></div>
+    <div class="hero-spot" aria-hidden="true"></div>
 
     <div class="hero-content">
-      <p class="hero-eyebrow">Más de 10 años de trayectoria</p>
+      <p class="hero-eyebrow">✂ Más de 10 años de trayectoria</p>
 
       <h1 class="hero-title">
+        <span class="sr-only">Bad Boys Barber — Barbería en Moreno, Cruce Castelar</span>
         <span class="hero-logo-contenedor">
           <img
-            src="images/Logos/LogoBadBoys.svg"
-            alt="Bad Boys- Cruce Castelar - Moreno, Buenos Aires"
+            src="assets/img/brand/logo-badboys-neon.svg"
+            width="722" height="203"
+            alt="" aria-hidden="true"
+            fetchpriority="high"
             class="hero-logo-titulo"
           />
         </span>
       </h1>
 
-      <p class="hero-slogan">DEL CRUCE PAL MUNDO 🌎</p>
-      <h2 id="hero-oculto">Freestyle · Global · Diseños · Rulos · Claritos — Moreno, Buenos Aires</h2>
+      <p class="hero-slogan">DEL CRUCE PAL MUNDO <img class="slogan-mundo" src="assets/img/brand/mundo.webp" width="96" height="96" alt="" aria-hidden="true" decoding="async" /></p>
+      <p class="hero-servicios">Degradados · Freestyle · Claritos · Globales · Rulos</p>
 
       <div class="hero-ctas">
-        <a href="#insumos" class="btn btn-outline">Info de Insumos</a>
-
-        <a href="https://turnito.app/c/jLAGTxzvFHmLmz" target="_blank" rel="noopener" class="btn btn-primary">Sacar Turno</a>
-        
-        <a href="#academia" class="btn btn-outline">Info de Academia</a>
+        <a
+          href="https://turnito.app/c/jLAGTxzvFHmLmz"
+          target="_blank" rel="noopener"
+          class="btn btn-primary"
+        >Sacar Turno
+        </a>
+        <a href="barber-host/index.html" class="btn btn-host">Barber Host</a>
+        <a href="#galeria" class="btn btn-outline">Ver Diseños ↓</a>
       </div>
     </div>
 
@@ -123,6 +345,64 @@
     </div>
   </section>
 
+  <!-- ===== NOVEDAD: BARBER HOST ===== -->
+  <section id="barber-host" class="bh-novedad">
+    <div class="container">
+      <div class="academia-grid">
+
+        <div class="academia-content">
+          <p class="section-label reveal">⚡ Novedad</p>
+          <h2 class="section-title reveal">Barber <span class="accent">Host</span></h2>
+          <p class="bh-nombre reveal">Ezequiel Farias</p>
+          <p class="section-desc reveal">El dueño de Bad Boys ahora es la voz de los eventos barberiles. Campeonatos, batallas, expos, masterclass y marcas: <strong>de la silla al escenario.</strong></p>
+
+          <div class="academia-features">
+            <div class="feature-item reveal">
+              <span class="feature-icon">🎤</span>
+              <div class="feature-text">
+                <h4>Conducción de competencias</h4>
+                <p>Categorías, jurados, competidores, resultados y premiaciones.</p>
+              </div>
+            </div>
+            <div class="feature-item reveal" data-delay="100">
+              <span class="feature-icon">⚡</span>
+              <div class="feature-text">
+                <h4>Energía de principio a fin</h4>
+                <p>El público conectado durante todo el evento.</p>
+              </div>
+            </div>
+            <div class="feature-item reveal" data-delay="200">
+              <span class="feature-icon">🏆</span>
+              <div class="feature-text">
+                <h4>Marcas y sponsors</h4>
+                <p>Lanzamientos y activaciones integrados al ritmo del evento.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bh-ctas reveal">
+            <a href="barber-host/index.html" class="btn btn-primary">Entrá a Barber Host →</a>
+          </div>
+        </div>
+
+        <a href="barber-host/index.html" class="academia-img-wrap bh-img reveal" aria-label="Ver la página de Barber Host">
+          <img
+            src="barber-host/assets/img/brand/barberhost.webp"
+            srcset="barber-host/assets/img/brand/barberhost-600.webp 600w, barber-host/assets/img/brand/barberhost.webp 900w"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            width="900" height="1200"
+            alt="De barbero de barrio a Barber Host: Ezequiel Farias con el micrófono en un evento"
+            loading="lazy" decoding="async" />
+          <div class="academia-badge">
+            <div class="inner">🎤<br>NUEVO</div>
+          </div>
+          <span class="bh-ver-mas" aria-hidden="true">Ver Barber Host <b>→</b></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ===== NOSOTROS ===== -->
 <section id="nosotros" class="reveal">
   <div class="container">
@@ -130,11 +410,11 @@
 
       <!-- COLUMNA 1: TODO EL TEXTO -->
       <div class="nosotros-content">
-        <p class="section-label">Nuestra Esencia</p>
+        <p class="section-label">Barbería en Cruce Castelar · Moreno</p>
         <h2 class="section-title">Más que una <span class="accent">Barbería</span></h2>
 
         <div class="section-desc nosotros-desc">
-          <p><strong>Bad Boys</strong> no nació en 2018; nació mucho antes, en años de esfuerzo para que el Cruce Castelar tuviera la barbería que se merecía.</p>
+          <p><strong>Bad Boys</strong> abrió en 2018, pero no nació ahí; nació mucho antes, en años de esfuerzo para que el Cruce Castelar tuviera la barbería que se merecía.</p>
           <p>Lo que arrancó como un sueño en la Galería Ibera hoy pisa fuerte con dos sucursales, nuestro propio local de insumos y una academia de barberos, manteniendo la mística de siempre.</p>
           <p>No solo cortamos, dominamos todo el juego: Desde el freestyle más crudo, cortes en tendencia y colorimetría (globales y claritos), hasta expertos en rulos y ondulaciones.</p>
         </div>
@@ -165,7 +445,7 @@
 
       <!-- COLUMNA 2: LA IMAGEN -->
       <div class="nosotros-img-wrap">
-        <img src="images/Esencia/barbero-mundo.webp" alt="Barbería Bad Boys interior en Moreno, Buenos Aires" />
+        <img src="assets/img/nosotros/barbero-mundo.webp" width="1080" height="1440" alt="Barbería Bad Boys interior en Moreno, Buenos Aires" loading="lazy" decoding="async" />
         <div class="academia-badge">
           <div class="inner">ESTILO<br>PROPIO</div>
         </div>
@@ -198,7 +478,7 @@
 
           <!-- Ítem 1 -->
           <div class="viaje-item">
-            <img src="images/Viajes/SanMiguel.webp" alt="San Miguel, Buenos Aires" loading="lazy">
+            <img src="assets/img/viajes/san-miguel.webp" alt="San Miguel, Buenos Aires" width="1080" height="1440" loading="lazy" decoding="async">
             <div class="viaje-info">
               <span class="viaje-titulo">San Miguel</span>
               <span class="viaje-pais">Buenos Aires</span>
@@ -207,7 +487,7 @@
 
           <!-- Ítem 2 -->
           <div class="viaje-item">
-            <img src="images/Viajes/Mendoza.webp" alt="Mendoza, Argentina" loading="lazy">
+            <img src="assets/img/viajes/mendoza.webp" alt="Mendoza, Argentina" width="1080" height="1440" loading="lazy" decoding="async">
             <div class="viaje-info">
               <span class="viaje-titulo">Mendoza</span>
               <span class="viaje-pais">Argentina</span>
@@ -216,7 +496,7 @@
 
           <!-- Ítem 3 -->
           <div class="viaje-item">
-            <img src="images/Viajes/Laisla.webp" alt="La isla - Santa Fe, Argentina" loading="lazy">
+            <img src="assets/img/viajes/la-isla.webp" alt="La isla - Santa Fe, Argentina" width="1080" height="1440" loading="lazy" decoding="async">
             <div class="viaje-info">
               <span class="viaje-titulo">La isla</span>
               <span class="viaje-pais">Argentina</span>
@@ -225,7 +505,7 @@
 
           <!-- Ítem 4 -->
           <div class="viaje-item">
-            <img src="images/Viajes/SantiagodelEstero.webp" alt="Santiago del Estero, Argentina" loading="lazy">
+            <img src="assets/img/viajes/santiago-del-estero.webp" alt="Santiago del Estero, Argentina" width="1080" height="1440" loading="lazy" decoding="async">
             <div class="viaje-info">
               <span class="viaje-titulo">Santiago del Estero</span>
               <span class="viaje-pais">Argentina</span>
@@ -252,7 +532,7 @@
   <!-- ===== GALERÍA DE DISEÑOS ===== -->
   <section id="galeria" class="viajes reveal"> 
   <div class="viajes-header">
-    <span class="viajes-subtitulo">NUESTRO TRABAJO</span>
+    <span class="viajes-subtitulo">CORTES EN BAD BOYS · MORENO</span>
     <h2 class="viajes-titulo">DISEÑOS Y <span class="accent">FREESTYLE</span></h2>
   </div>
 
@@ -272,7 +552,7 @@
 
         <!-- Ítem 1 -->
         <div class="viaje-item">
-          <img src="images/Cortes/Corte1.webp" alt="Degradado en Moreno" loading="lazy">
+          <img src="assets/img/cortes/corte-1.webp" alt="Corte degradado hecho en Bad Boys, Moreno" width="1080" height="1440" loading="lazy" decoding="async">
           <div class="viaje-info">
             <span class="viaje-titulo">Degradado</span>
             <span class="viaje-pais">Bad Boys Barber</span>
@@ -281,7 +561,7 @@
 
         <!-- Ítem 2 -->
         <div class="viaje-item">
-          <img src="images/Cortes/Global.webp" alt="Claritos en Moreno" loading="lazy">
+          <img src="assets/img/cortes/global.webp" alt="Claritos hechos en Bad Boys, Moreno" width="1080" height="1440" loading="lazy" decoding="async">
           <div class="viaje-info">
             <span class="viaje-titulo">Claritos</span>
             <span class="viaje-pais">Bad Boys Barber</span>
@@ -290,7 +570,7 @@
 
         <!-- Ítem 3 -->
         <div class="viaje-item">
-          <img src="images/Cortes/Rulos.webp" alt="Rulos en Moreno" loading="lazy">
+          <img src="assets/img/cortes/rulos.webp" alt="Rulos en Bad Boys Barber, Moreno" width="1080" height="1440" loading="lazy" decoding="async">
           <div class="viaje-info">
             <span class="viaje-titulo">Rulos</span>
             <span class="viaje-pais">Bad Boys Barber</span>
@@ -299,7 +579,7 @@
 
         <!-- Ítem 4 -->
         <div class="viaje-item">
-          <img src="images/Cortes/IMG_1520.webp" alt="Degradado en Moreno" loading="lazy">
+          <img src="assets/img/cortes/corte-1520.webp" alt="Degradado con diseño en Bad Boys, Moreno" width="1080" height="1440" loading="lazy" decoding="async">
           <div class="viaje-info">
             <span class="viaje-titulo">Degradado</span>
             <span class="viaje-pais">Bad Boys Barber</span>
@@ -308,7 +588,7 @@
         
         <!-- Ítem 1 -->
         <div class="viaje-item">
-          <img src="images/Cortes/IMG_5696.webp" alt="Diseño en Moreno" loading="lazy">
+          <img src="assets/img/cortes/corte-5696.webp" alt="Diseño freestyle en Bad Boys, Moreno" width="1080" height="1440" loading="lazy" decoding="async">
           <div class="viaje-info">
             <span class="viaje-titulo">Diseño</span>
             <span class="viaje-pais">Bad Boys Barber</span>
@@ -317,7 +597,7 @@
 
         <!-- Ítem 2 -->
         <div class="viaje-item">
-          <img src="images/Cortes/IMG_6217.webp" alt="Claritos en Moreno" loading="lazy">
+          <img src="assets/img/cortes/corte-6217.webp" alt="Claritos y rulos en Bad Boys, Moreno" width="1080" height="1440" loading="lazy" decoding="async">
           <div class="viaje-info">
             <span class="viaje-titulo">Claritos y Rulos</span>
             <span class="viaje-pais">Bad Boys Barber</span>
@@ -326,7 +606,7 @@
 
         <!-- Ítem 3 -->
         <div class="viaje-item">
-          <img src="images/Cortes/IMG_8502.webp" alt="Global en Moreno" loading="lazy">
+          <img src="assets/img/cortes/corte-8502.webp" alt="Global (decoloración completa) en Bad Boys, Moreno" width="1080" height="1440" loading="lazy" decoding="async">
           <div class="viaje-info">
             <span class="viaje-titulo">Global</span>
             <span class="viaje-pais">Bad Boys Barber</span>
@@ -335,7 +615,7 @@
 
         <!-- Ítem 4 -->
         <div class="viaje-item">
-          <img src="images/Cortes/IMG_6447.webp" alt="Claritos en Moreno" loading="lazy">
+          <img src="assets/img/cortes/corte-6447.webp" alt="Claritos en Bad Boys Barber, Moreno" width="1080" height="1440" loading="lazy" decoding="async">
           <div class="viaje-info">
             <span class="viaje-titulo">Claritos</span>
             <span class="viaje-pais">Bad Boys Barber</span>
@@ -362,16 +642,16 @@
       <div class="academia-grid">
 
         <div class="academia-img-wrap reveal">
-          <img src="images/Academia/Academia.webp" alt="Academia Bad Boys en Cruce Castelar — Moreno, Buenos Aires" />
+          <img src="assets/img/academia/academia-900.webp" width="900" height="1200" alt="Curso de barbería en la Academia Bad Boys, Cruce Castelar — Moreno" loading="lazy" decoding="async" />
           <div class="academia-badge">
             <div class="inner">⚡<br>CURSO<br>PRO</div>
           </div>
         </div>
 
         <div class="academia-content">
-          <p class="section-label reveal">Formación Profesional</p>
+          <p class="section-label reveal">Academia · Curso de barbería en Moreno</p>
           <h2 class="section-title reveal">EL ABC DE LA <span class="accent">BARBERÍA</span></h2>
-          <p class="section-desc reveal">Aprendé de los mejores. Nuestro curso te da las herramientas reales para transformar tu pasión en una carrera profesional.</p>
+          <p class="section-desc reveal">Aprendé de los mejores en nuestro <strong>curso de barbería en Cruce Castelar, Moreno</strong>. Te damos las herramientas reales para transformar tu pasión en una carrera profesional.</p>
 
           <div class="academia-features">
             <div class="feature-item reveal">
@@ -417,7 +697,7 @@
   <!-- ===== INSUMOS ===== -->
   <section id="insumos">
     <div class="container">
-      <p class="section-label reveal">Tienda Profesional</p>
+      <p class="section-label reveal">Insumos para barberos en Moreno</p>
       <h2 class="section-title reveal">Insumos y <span class="accent">Productos</span></h2>
       <p class="section-desc reveal">Todo lo que el barbero necesita, en un solo lugar. Stock permanente y las mejores marcas del mercado.</p>
 
@@ -425,70 +705,75 @@
 
         <div class="producto-card reveal">
           <div class="producto-img">
-            <img src="images/Insumos/maquinas-kemei.webp" alt="Máquinas Kemei profesionales" loading="lazy" />
+            <img src="assets/img/insumos/maquinas-kemei.webp" alt="Máquinas Kemei profesionales" width="640" height="869" loading="lazy" decoding="async" />
           </div>
           <div class="producto-info">
             <p class="producto-tag">Máquinas</p>
             <h3 class="producto-name">Kit Kemei KM-8557</h3>
             <p class="producto-desc">Set profesional: clipper, trimmer y afeitadora. Motor potente, batería de larga duración.</p>
-            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20el%20Kit%20Kemei" target="_blank" class="producto-cta">Consultar precio →</a>
+            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20el%20Kit%20Kemei" target="_blank" rel="noopener" class="producto-cta">Consultar precio →</a>
           </div>
         </div>
 
         <div class="producto-card reveal" data-delay="80">
           <div class="producto-img">
-            <img src="images/Insumos/everest-shaver.webp" alt="Everest Professional Barber Shaver" loading="lazy" />
+            <img src="assets/img/insumos/everest-shaver.webp" alt="Everest Professional Barber Shaver" width="647" height="858" loading="lazy" decoding="async" />
           </div>
           <div class="producto-info">
             <p class="producto-tag">Afeitadoras</p>
             <h3 class="producto-name">Everest Barber Shaver</h3>
             <p class="producto-desc">Motor 9000 RPM, cuchillas titanio doradas, batería Li-Ion. 2hs de autonomía.</p>
-            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20la%20Everest%20Shaver" target="_blank" class="producto-cta">Consultar precio →</a>
+            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20la%20Everest%20Shaver" target="_blank" rel="noopener" class="producto-cta">Consultar precio →</a>
           </div>
         </div>
 
         <div class="producto-card reveal" data-delay="160">
           <div class="producto-img">
-            <img src="images/Insumos/after-shave.webp" alt="After Shave Original Black" loading="lazy" />
+            <img src="assets/img/insumos/after-shave.webp" alt="After Shave Original Black" width="682" height="883" loading="lazy" decoding="async" />
           </div>
           <div class="producto-info">
             <p class="producto-tag">After Shave</p>
             <h3 class="producto-name">Original Black 400ml</h3>
             <p class="producto-desc">Colonia post afeitado hidratante. Refrescante y revitalizante. Todo tipo de piel.</p>
-            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20After%20Shave%20Original%20Black" target="_blank" class="producto-cta">Consultar precio →</a>
+            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20After%20Shave%20Original%20Black" target="_blank" rel="noopener" class="producto-cta">Consultar precio →</a>
           </div>
         </div>
 
         <div class="producto-card reveal" data-delay="240">
           <div class="producto-img">
-            <img src="images/Insumos/evejarra.webp" alt="Eve Jarra Barber Pro" loading="lazy" />
+            <img src="assets/img/insumos/evejarra.webp" alt="Eve Jarra Barber Pro" width="633" height="874" loading="lazy" decoding="async" />
           </div>
           <div class="producto-info">
             <p class="producto-tag">Accesorios</p>
             <h3 class="producto-name">EveJarra Barber Pro</h3>
             <p class="producto-desc">Jarra esterilizadora profesional para herramientas. Indispensable en cualquier barbería.</p>
-            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20la%20EveJarra" target="_blank" class="producto-cta">Consultar precio →</a>
+            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20la%20EveJarra" target="_blank" rel="noopener" class="producto-cta">Consultar precio →</a>
           </div>
         </div>
 
         <div class="producto-card reveal" data-delay="320">
           <div class="producto-img">
-            <img src="images/Insumos/kit-pomada.webp" alt="Kit pomada y accesorios" loading="lazy" />
+            <img src="assets/img/insumos/kit-pomada.webp" alt="Kit pomada y accesorios" width="631" height="884" loading="lazy" decoding="async" />
           </div>
           <div class="producto-info">
             <p class="producto-tag">Styling</p>
             <h3 class="producto-name">Kit Pomada Mate Navajas</h3>
             <p class="producto-desc">Pomada mate fijación fuerte, línea Navajas. Pack completo con accesorios de barbería.</p>
-            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20el%20Kit%20Pomada%20Navajas" target="_blank" class="producto-cta">Consultar precio →</a>
+            <a href="https://wa.me/5491136596097?text=Quiero%20info%20sobre%20el%20Kit%20Pomada%20Navajas" target="_blank" rel="noopener" class="producto-cta">Consultar precio →</a>
           </div>
         </div>
 
       </div>
 
-      <div class="catalogo-link">
-        <a href="Archivos/CATÁLOGO-AGOSTO.pdf" target="_blank" rel="noopener" class="btn btn-outline reveal">
+      <div class="catalogo-link insumos-ctas reveal">
+        <a href="https://wa.me/5491128179235?text=Hola%20Bad%20Boys%20Insumos!%20Quiero%20consultar%20por%20productos." target="_blank" rel="noopener" class="btn btn-wa-insumos" aria-label="Escribir por WhatsApp a Bad Boys Insumos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>Bad Boys Insumos</span>
+        </a>
+        <a href="Archivos/CatalogoINSUMOS-Mayo.pdf" target="_blank" rel="noopener" class="btn btn-outline">
           Ver Catálogo Completo
         </a>
+        <p class="insumos-wa-num">WhatsApp Insumos · 11 2817-9235</p>
       </div>
     </div>
   </section>
@@ -498,13 +783,13 @@
     <div class="container">
       <p class="section-label reveal">Encontranos</p>
       <h2 class="section-title reveal">Nuestras <span class="accent">Sucursales</span></h2>
-      <p class="section-desc reveal">Dos sedes para atenderte y una tienda de insumos. Vení a vivir la experiencia Bad Boys.</p>
+      <p class="section-desc reveal">Dos barberías en Cruce Castelar, Moreno, y una tienda de insumos en Las Flores. Vení a vivir la experiencia Bad Boys.</p>
 
       <div class="sucursales-grid">
 
         <article class="sucursal-card main-branch reveal">
           <div class="sucursal-img">
-            <img src="images/Sucursales/Sucursal2.webp" alt="Barbería Bad Boys — Sede Principal Cruce Castelar" loading="lazy" />
+            <img src="assets/img/sucursales/sucursal-2.webp" alt="Barbería Bad Boys — Sede Principal Cruce Castelar" width="1080" height="1032" loading="lazy" decoding="async" />
           </div>
           <div class="sucursal-body">
             <span class="sucursal-badge">Sede Principal</span>
@@ -524,7 +809,7 @@
 
         <article class="sucursal-card reveal" data-delay="120">
           <div class="sucursal-img">
-            <img src="images/Sucursales/galeria.webp" alt="Barbería Bad Boys — Sucursal Galería Iberá" loading="lazy" />
+            <img src="assets/img/sucursales/galeria.webp" alt="Barbería Bad Boys — Sucursal Galería Iberá" width="678" height="377" loading="lazy" decoding="async" />
           </div>
           <div class="sucursal-body">
             <span class="sucursal-badge">Segunda Sede</span>
@@ -543,18 +828,18 @@
         </article>
         <article class="sucursal-card reveal" data-delay="240">
       <div class="sucursal-img">
-        <img src="images/Sucursales/Insumos.webp" alt="Barbería Bad Boys — Sede Insumos Las Flores Moreno" loading="lazy" />
+        <img src="assets/img/sucursales/insumos.webp" alt="Barbería Bad Boys — Sede Insumos Las Flores Moreno" width="718" height="779" loading="lazy" decoding="async" />
       </div>
       <div class="sucursal-body">
-        <span class="sucursal-badge">Sede Insumos</span>
-        <h3 class="sucursal-name">BAD BOYS INSUMOS</h3>
+        <span class="sucursal-badge">by Bad Boys</span>
+        <h3 class="sucursal-name">SEDE INSUMOS</h3>
         <address class="sucursal-info">
           <span class="sucursal-calle">Av. del Libertador 6107</span>
           <span class="sucursal-ciudad">Feria de las Flores, Moreno</span>
           <span class="sucursal-barrio">Las Flores</span>
         </address>
         <div class="sucursal-links">
-          <a href="https://wa.me/5491136596097?text=Hola!%20Quiero%20este%20producto%20" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href="https://wa.me/5491128179235?text=Hola%20Bad%20Boys%20Insumos!%20Quiero%20consultar%20por%20productos." target="_blank" rel="noopener">💬 WhatsApp</a>
           <a href="https://www.instagram.com/barberinsumos.badboys/" target="_blank" rel="noopener">📸 Instagram</a>
           <a href="https://www.google.com/maps/place/Feria+Las+Flores+(+PREDIO+CERRADO)/@-34.5987528,-58.7607889,16.5z/data=!4m6!3m5!1s0x95bc971b210bb529:0x8e26c00b24b12211!8m2!3d-34.5989164!4d-58.7570852!16s%2Fg%2F11rb3y_9bt?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 Cómo llegar</a>
         </div>
@@ -574,7 +859,7 @@
         <div class="footer-brand">
           <div class="footer-logo">BAD<span>BOYS</span></div>
           <p class="footer-tagline">Del Cruce Pal Mundo ⚡</p>
-          <p class="footer-desc">Barbería profesional especializada en Freestyle, Color y Rulos. Más de 7 años transformando estilos en Moreno, Buenos Aires.</p>
+          <p class="footer-desc">Barbería profesional especializada en Freestyle, Color y Rulos. Más de 10 años transformando estilos en Cruce Castelar, Moreno, Buenos Aires.</p>
         </div>
 
         <div class="footer-col">
@@ -586,7 +871,8 @@
             <li><a href="#insumos">Insumos</a></li>
             <li><a href="#academia">Academia</a></li>
             <li><a href="#sucursales">Sucursales</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="barber-host/index.html">Barber Host</a></li>
+            <li><a href="#sucursales">Contacto</a></li>
           </ul>
         </div>
 
@@ -616,7 +902,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; <span class="current-year"></span> Barber Bad Boys. Todos los derechos reservados.</p>
+        <p>&copy; <span class="current-year"></span> Bad Boys Barber. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
@@ -626,7 +912,7 @@
     href="https://www.instagram.com/badboys_barber_shop/"
     target="_blank" rel="noopener"
     class="ig-float"
-    aria-label="Instagram"
+    aria-label="Instagram de Bad Boys Barber"
   >
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
   </a>
@@ -636,13 +922,13 @@
     href="https://wa.me/5491136596097?text=Hola!%20Quiero%20sacar%20turno"
     target="_blank" rel="noopener"
     class="wa-float"
-    aria-label="WhatsApp"
+    aria-label="Escribir por WhatsApp"
   >
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
 
-  <script src="js/script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

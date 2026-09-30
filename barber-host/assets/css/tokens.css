@@ -1,0 +1,24 @@
+/* ==========================================================
+   Barber Host · Tokens de diseño: colores, tipografías y medidas
+   ========================================================== */
+
+/* Concepto: la web oficial de una disciplina nueva. Póster de evento: tipografía enorme, mucho negro, amarillo Bad Boys como golpe, dorado metálico en detalles. Frases que cruzan la pantalla al scrollear. Estética oscura única, a propósito. */
+:root{
+  --ink:#0a0a08;         /* fondo */
+  --ink-2:#131310;       /* superficies */
+  --line:#2a2820;        /* bordes */
+  --yellow:#ffbb00;      /* amarillo Bad Boys (el mismo de badboysbarber.com.ar) */
+  --gold:#c9a24a;        /* metálico */
+  --gold-hi:#f0d58c;     /* brillo */
+  --bone:#f1ece0;        /* texto */
+  --mute:#8f8a7c;        /* texto secundario */
+  --red:#b3261e;         /* poste */
+  --f-display:"Anton","Impact","Arial Narrow",sans-serif;
+  --f-accent:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --gutter:clamp(16px,4vw,48px);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --ease-io:cubic-bezier(.7,0,.2,1);
+  color-scheme:dark;
+}
