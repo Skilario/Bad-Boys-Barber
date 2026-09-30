@@ -24,14 +24,12 @@ barber-host/
 │   │   ├── responsive.css      escala tipográfica y ajustes de celular
 │   │   ├── badboys.css         ítem "Bad Boys" (vuelve a la web de la barbería)
 │   │   └── perf.css            ajustes de velocidad (va último)
-│   └── img/
-│       ├── eze-*.webp          fotos que usa la página (eze-*-600.webp = versión chica para celu)
-│       ├── eze-*.jpg           originales / respaldo (Google Imágenes y navegadores viejos)
-│       ├── eze-hero-mobile.*   recorte del hero para celular
-│       ├── og-barber-host.jpg  imagen 1200×630 que aparece al compartir el link
-│       ├── logo-badboys.webp   logo liviano que usa la página (el .png queda de original)
-│       ├── icons/              favicon, ícono de iPhone/Android
-│       ├── covers/             portadas de reels y YouTube (.webp; .jpg de original)
+│   ├── img/
+│   │   ├── brand/              logo-badboys.webp, og-barber-host.jpg (imagen al compartir), barberhost*.webp, icons/ (favicon e íconos de celu)
+│   │   ├── eze/                fotos de Ezequiel: eze-hero, eze-hero-mobile (recorte para celu), eze-en-vivo, eze-silla-escenario, eze-trofeos (*-600.webp = versión chica para celu)
+│   │   ├── fondos/             fondo-contrato(.webp / -600.webp)
+│   │   ├── eventos/            flyers de eventos (reyes-del-filo, etc.)
+│   │   └── covers/             portadas de reels y YouTube (.webp; .jpg de original)
 │   └── video/                  MP4 propios de los reels (ver LEEME.txt)
 └── js/
     ├── models/                 DATOS
@@ -121,14 +119,15 @@ Están en `index.html` (sección `#portfolio`), en este orden, todos con foto en
 1. **Bienvenido al We$t Side ⚡** — Cruce Castelar (`west-side.webp`).
 2. **Liga de Barberos** — Merlo · Zona Oeste (`liga-de-barberos.webp`).
 3. **Barber vs Barber 8** — Hurlingham (`barber-vs-barber-8.webp`, solo foto).
+4. **Reyes del Filo** (`reyes-del-filo.webp`).
 
 Para sumar un evento: copiar un `<article class="ev">` y cambiar foto y textos.
 
 ## Imágenes
 
 Todas las fotos de la página están en **WebP** (con versión `-600` para celular). Solo quedan en otro formato,
-a propósito: `og-barber-host.jpg` (vista previa al compartir: WhatsApp/Facebook la leen mejor en JPG),
-los íconos `.png` y `favicon.ico` (formatos que piden los navegadores y el celular).
+a propósito: `brand/og-barber-host.jpg` (vista previa al compartir: WhatsApp/Facebook la leen mejor en JPG),
+los íconos `.png` (`brand/icons/`) y `favicon.ico` (formatos que piden los navegadores y el celular).
 Para una foto nueva: pasarla a WebP (squoosh.app, calidad 75–80) y subir solo el `.webp`.
 
 ## Navegación
@@ -147,8 +146,8 @@ Cualquier elemento con `data-video="ig:ID_DEL_REEL"` o `data-video="yt:ID_DE_YOU
 
 ## Hero en celular
 
-En celular se usa `assets/img/eze-hero-mobile.webp` (recorte con la cara arriba) mediante `<picture>` en el hero (`#hero-img`).
-En compu se usa `eze-hero.webp`. Si cambian la foto, reemplazá los `.jpg` y generá sus `.webp` y `-600.webp` con el mismo nombre.
+En celular se usa `assets/img/eze/eze-hero-mobile.webp` (recorte con la cara arriba) mediante `<picture>` en el hero (`#hero-img`).
+En compu se usa `assets/img/eze/eze-hero.webp`. Si cambian la foto, reemplazá los `.jpg` y generá sus `.webp` y `-600.webp` con el mismo nombre.
 
 ## Pendiente
 - ID de Google Analytics 4 y alta en Search Console (ver *Después de publicar*).

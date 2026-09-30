@@ -18,7 +18,7 @@
 
 # Tipografías: no cambian nunca → caché de 1 año (carga más rápida al volver)
 [[headers]]
-  for = "/fonts/*"
+  for = "/assets/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 [[headers]]
@@ -29,7 +29,7 @@
 # Imágenes y videos: 7 días (si cambiás una foto con el mismo nombre,
 # a más tardar en una semana todos ven la nueva)
 [[headers]]
-  for = "/images/*"
+  for = "/assets/img/*"
   [headers.values]
     Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 [[headers]]
