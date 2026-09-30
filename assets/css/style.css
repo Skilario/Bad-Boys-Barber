@@ -2100,3 +2100,37 @@ body { -webkit-font-smoothing: antialiased; }
 @media (max-width: 360px) {
   .hero-ctas .btn { padding-inline: 0.5rem; font-size: 0.56rem; letter-spacing: 0.03em; }
 }
+
+
+/* Barber Host (home): pastilla "Ver Barber Host" para que se note que la foto es un link */
+.bh-img { position: relative; }
+.bh-ver-mas {
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  background: rgba(10, 10, 8, 0.78);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1.5px solid #ffc400;
+  color: #ffc400;
+  font-family: var(--fuente-cond);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 0 0 14px rgba(255, 196, 0, 0.35);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  pointer-events: none;
+}
+.bh-ver-mas b { display: inline-block; animation: bhMasNudge 1.6s ease-in-out infinite; }
+.bh-img:hover .bh-ver-mas,
+.bh-img:focus-visible .bh-ver-mas { background: #ffc400; color: #0a0a08; box-shadow: 0 0 22px rgba(255, 196, 0, 0.6); }
+@keyframes bhMasNudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+@media (prefers-reduced-motion: reduce) { .bh-ver-mas b { animation: none; } }
