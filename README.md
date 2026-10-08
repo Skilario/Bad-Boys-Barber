@@ -1,7 +1,6 @@
 # Bad Boys Barber — Cruce Castelar, Moreno
 
-Sitio de la barbería (badboysbarber.com.ar) + la página de Barber Host (Ezequiel Farias) en `/barber-host/`.
-HTML + CSS + JavaScript puro, sin build. Se publica en Netlify tal cual está la carpeta.
+Sitio de la barbería (badboysbarber.com.ar) + la página de Barber Host (Ezequiel Farias)
 
 ## Estructura
 
